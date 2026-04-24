@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Download Prompt Compass</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%23f8fbf9%27/%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2723%27 fill=%27none%27 stroke=%27%230f766e%27 stroke-width=%275%27/%3E%3Cpath d=%27M18 42 31 14l15 35-14-9z%27 fill=%27%23d95f43%27/%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17211f;
+      --muted: #54615e;
+      --paper: #f8fbf9;
+      --line: #cbd8d3;
+      --teal: #0f766e;
+      --coral: #d95f43;
+      --leaf: #527a39;
+      --gold: #b7791f;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--paper); color: var(--ink); line-height: 1.55; letter-spacing: 0; }
+    header, main, footer { width: min(1040px, calc(100% - 32px)); margin: 0 auto; }
+    header { padding: 44px 0 22px; display: grid; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 16px; }
+    .brand img { width: 76px; height: 76px; border-radius: 8px; border: 1px solid var(--line); }
+    h1 { margin: 0; font-size: 2.25rem; line-height: 1.1; }
+    h2 { margin: 0 0 10px; font-size: 1.35rem; }
+    p { margin: 0 0 12px; }
+    .lead { max-width: 760px; color: var(--muted); font-size: 1.08rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .card { border: 1px solid var(--line); border-left: 4px solid var(--teal); border-radius: 8px; padding: 20px; background: #fff; }
+    .tag { display: inline-block; color: #fff; background: var(--teal); border-radius: 8px; padding: 4px 8px; font-size: .85rem; }
+    .button { display: inline-block; margin: 6px 8px 0 0; padding: 10px 13px; border-radius: 8px; background: var(--teal); color: #fff; text-decoration: none; font-weight: 700; border: 0; cursor: pointer; }
+    .button.secondary { background: var(--coral); }
+    .button.ghost { background: var(--leaf); }
+    section { padding: 20px 0; }
+    ol, ul { padding-left: 22px; }
+    code { overflow-wrap: anywhere; }
+    details { margin: 12px 0; }
+    summary { cursor: pointer; font-weight: 700; }
+    table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    td { border-top: 1px solid var(--line); padding: 8px 6px; vertical-align: top; }
+    textarea { width: 100%; min-height: 220px; border: 1px solid var(--line); border-radius: 8px; padding: 12px; font: inherit; font-size: .9rem; resize: vertical; }
+    .tab-nav { display: flex; flex-wrap: wrap; gap: 8px; padding: 4px 0 14px; }
+    .tab-nav button { border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); cursor: pointer; font: inherit; font-weight: 700; padding: 9px 12px; }
+    .tab-nav button[aria-selected="true"] { background: var(--teal); border-color: var(--teal); color: #fff; }
+    .tab-panel[hidden] { display: none; }
+    .tab-panel > .card, .tab-panel > details.card { margin: 0 0 18px; }
+    .author-card { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 18px; align-items: center; }
+    .author-photo { width: 96px; height: 96px; object-fit: cover; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+    .section-heading { padding: 6px 0 12px; }
+    .section-heading h2 { margin-bottom: 4px; }
+    footer { padding: 28px 0 44px; color: var(--muted); }
+    .notice { border-left: 4px solid var(--gold); }
+    @media (max-width: 640px) { .author-card { grid-template-columns: 1fr; } .author-photo { width: 84px; height: 84px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img alt="Prompt Compass badge" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='16' fill='%23f8fbf9'/%3E%3Ccircle cx='60' cy='60' r='44' fill='none' stroke='%230f766e' stroke-width='8'/%3E%3Cpath d='M34 86 58 22l30 74-29-20z' fill='%23d95f43'/%3E%3Ccircle cx='60' cy='60' r='7' fill='%2317211f'/%3E%3C/svg%3E">
+      <div>
+        <span class="tag">Prompt Compass 0.1.0-beta.1</span>
+        <h1>Download Prompt Compass</h1>
+      </div>
+    </div>
+    <p class="lead">Prompt Compass helps AI users turn rough ideas, messy drafts, and fragile instructions into clearer prompts with diagnosis, guided improvement, prompt building, preflight checks, model targeting, and local personal overlays.</p>
+  </header>
+  <main>
+    <nav class="tab-nav" role="tablist" aria-label="Prompt Compass download sections">
+      <button id="tab-get-started" role="tab" aria-controls="get-started" aria-selected="true" data-tab-target="get-started">Get Started</button>
+      <button id="tab-faq" role="tab" aria-controls="faq" aria-selected="false" data-tab-target="faq">About &amp; FAQ</button>
+      <button id="tab-install" role="tab" aria-controls="install" aria-selected="false" data-tab-target="install">Install Guide</button>
+      <button id="tab-example" role="tab" aria-controls="example" aria-selected="false" data-tab-target="example">Example</button>
+      <button id="tab-advanced" role="tab" aria-controls="advanced" aria-selected="false" data-tab-target="advanced">Advanced</button>
+    </nav>
+
+    <section id="get-started" class="tab-panel" role="tabpanel" aria-labelledby="tab-get-started">
+      <div class="card">
+        <h2>What is Prompt Compass?</h2>
+        <p>Prompt Compass is a local prompt-engineering companion. It routes broad requests, diagnoses weak prompts, improves existing prompts, builds new prompts from intent, compares versions, and checks whether a prompt is ready for the model or surface where it will run.</p>
+      </div>
+
+      <section class="grid">
+        <div class="card">
+          <h2>Claude Plugin</h2>
+          <p>Best for Claude hosts that accept custom plugin uploads. Bundles the Prompt Compass MCP server plus the shared skill.</p>
+          <p><span class="tag">v0.1.0-beta.1</span></p>
+          <a class="button" href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/prompt-compass-plugin.zip" download>Download Plugin</a>
+        </div>
+        <div class="card">
+          <h2>Claude Desktop Extension</h2>
+          <p>Best for Claude Desktop extension install. This is the Claude-native MCPB package.</p>
+          <p><span class="tag">v0.1.0-beta.1</span></p>
+          <a class="button secondary" href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/prompt-compass-0.1.0.mcpb" download>Download Extension</a>
+        </div>
+        <div class="card">
+          <h2>Skill / Prompt-Only Alternative</h2>
+          <p>A standalone skill Claude can read without the MCP connector. It preserves Prompt Compass workflow guidance even when tools are unavailable.</p>
+          <p><span class="tag">v0.1.0-beta.1</span></p>
+          <a class="button ghost" href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/prompt-compass.skill" download>Download Skill</a>
+          <a class="button ghost" href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/skill.zip" download>Download Skill Zip</a>
+        </div>
+      </section>
+
+      <div class="card">
+        <h2>Pick Your Path</h2>
+        <table>
+          <tr><td><strong>I use a Claude plugin host</strong></td><td>Download <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/prompt-compass-plugin.zip" download><code>prompt-compass-plugin.zip</code></a></td></tr>
+          <tr><td><strong>I use Claude Desktop</strong></td><td>Download <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/prompt-compass-0.1.0.mcpb" download><code>prompt-compass-0.1.0.mcpb</code></a></td></tr>
+          <tr><td><strong>I want prompt-only guidance</strong></td><td>Download <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/prompt-compass.skill" download><code>prompt-compass.skill</code></a> or <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/skill.zip" download><code>skill.zip</code></a></td></tr>
+          <tr><td><strong>I am a developer or reviewer</strong></td><td>Download <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/prompt-compass-source.zip" download><code>prompt-compass-source.zip</code></a></td></tr>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2>Your First Prompt</h2>
+        <p>After install, copy one of these starters into your AI assistant.</p>
+      </div>
+      <section class="grid">
+
+        <div class="card">
+          <h2>Quick Prompt Fix</h2>
+          <p><strong>When to use:</strong> Best when you have a draft and want a safer, cleaner version fast.</p>
+          <button class="button secondary" type="button" id="copy-quick">Copy prompt</button>
+          <textarea id="prompt-copy-quick" readonly>Use Prompt Compass. I want a quick fix for this prompt:
+
+[Paste your prompt here]</textarea>
+        </div>
+
+        <div class="card">
+          <h2>Guided Improve</h2>
+          <p><strong>When to use:</strong> Best when the prompt matters and you want the AI to ask a few plain-language questions.</p>
+          <button class="button secondary" type="button" id="copy-guided">Copy prompt</button>
+          <textarea id="prompt-copy-guided" readonly>Use Prompt Compass with guided improve mode. Ask me one question at a time using native question UI if available.
+
+Prompt to improve:
+[Paste your prompt here]</textarea>
+        </div>
+
+        <div class="card">
+          <h2>Build From Scratch</h2>
+          <p><strong>When to use:</strong> Best when you know the outcome but do not know how to ask the AI for it yet.</p>
+          <button class="button secondary" type="button" id="copy-build">Copy prompt</button>
+          <textarea id="prompt-copy-build" readonly>Use Prompt Compass to build a prompt from scratch. Start by routing the request, then help me choose quick fix, guided, or deep dive.
+
+What I want the AI to help with:
+[Describe the task here]</textarea>
+        </div>
+      </section>
+    </section>
+
+    <section id="faq" class="tab-panel" role="tabpanel" aria-labelledby="tab-faq" hidden>
+      <details class="card" open>
+        <summary>Who is Prompt Compass for?</summary>
+        <p>It is for people who know what they want from AI but need help turning intent into durable instructions: writers, researchers, product people, educators, analysts, developers, and technically curious users.</p>
+      </details>
+      <details class="card">
+        <summary>Does it send my prompts to a cloud service?</summary>
+        <p>The MCP package is local-first. The bundled knowledge base runs locally. Personal overlay records are stored in user app data unless you configure a different path.</p>
+      </details>
+      <details class="card">
+        <summary>What is Agent Mode?</summary>
+        <p>Agent Mode is an explicit advanced option that creates an approval-gated committee plan. It does not silently spawn agents, and it does not bypass host permissions.</p>
+      </details>
+    </section>
+
+    <section id="install" class="tab-panel" role="tabpanel" aria-labelledby="tab-install" hidden>
+      <div class="card">
+        <h2>Install Guide</h2>
+        <ol>
+          <li>Download the package that matches your host.</li>
+          <li>Install or upload it through that host's extension/plugin/skill flow.</li>
+          <li>Restart or open a fresh task if your host does not hot-load new MCPs.</li>
+          <li>Smoke test with: <code>Use Prompt Compass and call get_started.</code></li>
+        </ol>
+      </div>
+      <div class="card notice">
+        <h2>Safety Note</h2>
+        <p>Prompt Compass should be added, not used to overwrite unrelated MCP configuration. If you install from source, preserve existing servers and use absolute paths.</p>
+      </div>
+    </section>
+
+    <section id="example" class="tab-panel" role="tabpanel" aria-labelledby="tab-example" hidden>
+      <div class="card notice">
+        <h2>Prompt Examples Are Being Prepared</h2>
+        <p>Public before-and-after prompt examples will be added after sanitized conversation examples are ready. This release intentionally does not ship unready examples or fake downloads.</p>
+      </div>
+    </section>
+
+    <section id="advanced" class="tab-panel" role="tabpanel" aria-labelledby="tab-advanced" hidden>
+      <div class="card">
+        <h2>Checksums</h2>
+        <p>Use these SHA-256 values to verify downloaded artifacts.</p>
+        <table>
+<tr><td><code>checksums.txt</code></td><td><code>15707fff936e66e07fde3fea15ce99e21b68683c13f546ca9cbb7b1c7093160c</code></td></tr>
+<tr><td><code>prompt-compass-0.1.0.mcpb</code></td><td><code>65085e810b5c7840044e7febaa4c792faff3a9016dbda73ea67c061d6ac27e8c</code></td></tr>
+<tr><td><code>prompt-compass-plugin.zip</code></td><td><code>3de388a379812097cc088534e2c42151212d02f8572c3ce9ae3d8c877b0ceeea</code></td></tr>
+<tr><td><code>prompt-compass-source.zip</code></td><td><code>b05f001ac6da920eef63898f2aaa90cce04357219dc013acf07cbb014a564fda</code></td></tr>
+<tr><td><code>prompt-compass.skill</code></td><td><code>77911d338373cc0d3637a3ff07b5fbb72ae81e12449a4b69c76d1c543ce30608</code></td></tr>
+<tr><td><code>skill.zip</code></td><td><code>460ef16327ede26813416b3ac412cf316584807731705401b047c80b44344645</code></td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h2>Developer Source</h2>
+        <p>The source zip is for review and rebuild. It excludes private state, generated packages, caches, sidecars, virtualenvs, and local app-data.</p>
+        <a class="button" href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/prompt-compass-source.zip" download>Download Source Zip</a>
+        <a class="button ghost" href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/checksums.txt" download>Download Checksums</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="card author-card">
+      <img class="author-photo" alt="Prompt Compass badge" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='16' fill='%23f8fbf9'/%3E%3Ccircle cx='60' cy='60' r='44' fill='none' stroke='%230f766e' stroke-width='8'/%3E%3Cpath d='M34 86 58 22l30 74-29-20z' fill='%23d95f43'/%3E%3Ccircle cx='60' cy='60' r='7' fill='%2317211f'/%3E%3C/svg%3E">
+      <div>
+        <h2>Prompt Compass</h2>
+        <p>A local-first prompt workflow package by Jonathan Kyle Hobson.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+    const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+    function activateTab(target) {
+      tabs.forEach(tab => tab.setAttribute('aria-selected', String(tab.dataset.tabTarget === target)));
+      panels.forEach(panel => { panel.hidden = panel.id !== target; });
+      if (location.hash !== '#' + target) history.replaceState(null, '', '#' + target);
+    }
+    tabs.forEach(tab => tab.addEventListener('click', () => activateTab(tab.dataset.tabTarget)));
+    const initial = location.hash.replace('#', '');
+    if (initial && document.getElementById(initial)) activateTab(initial);
+    document.querySelectorAll('button[id^="copy-"]').forEach(button => {
+      button.addEventListener('click', async () => {
+        const textarea = document.getElementById('prompt-' + button.id);
+        if (!textarea) return;
+        await navigator.clipboard.writeText(textarea.value);
+        const original = button.textContent;
+        button.textContent = 'Copied';
+        setTimeout(() => { button.textContent = original; }, 1200);
+      });
+    });
+  </script>
+</body>
+</html>

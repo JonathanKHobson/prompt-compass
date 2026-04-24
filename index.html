@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Download Prompt Compass</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%23f8fbf9%27/%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2723%27 fill=%27none%27 stroke=%27%230f766e%27 stroke-width=%275%27/%3E%3Cpath d=%27M18 42 31 14l15 35-14-9z%27 fill=%27%23d95f43%27/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%23f8fbf9%27/%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2723%27 fill=%27none%27 stroke=%27%230f766e%27 stroke-width=%275%27/%3E%3Cpath d=%27M40 12 34 34 52 46 30 39z%27 fill=%27%23d95f43%27/%3E%3Cpath d=%27M24 52 30 30 12 18 34 25z%27 fill=%27%23527a39%27/%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%274%27 fill=%27%2317211f%27/%3E%3C/svg%3E">
   <style>
     :root {
       color-scheme: light;
@@ -58,7 +58,7 @@
 <body>
   <header>
     <div class="brand">
-      <img alt="Prompt Compass badge" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='16' fill='%23f8fbf9'/%3E%3Ccircle cx='60' cy='60' r='44' fill='none' stroke='%230f766e' stroke-width='8'/%3E%3Cpath d='M34 86 58 22l30 74-29-20z' fill='%23d95f43'/%3E%3Ccircle cx='60' cy='60' r='7' fill='%2317211f'/%3E%3C/svg%3E">
+      <img alt="Compass badge" src="data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 120 120&#x27;%3E%3Crect width=&#x27;120&#x27; height=&#x27;120&#x27; rx=&#x27;16&#x27; fill=&#x27;%23f8fbf9&#x27;/%3E%3Ccircle cx=&#x27;60&#x27; cy=&#x27;60&#x27; r=&#x27;44&#x27; fill=&#x27;none&#x27; stroke=&#x27;%230f766e&#x27; stroke-width=&#x27;8&#x27;/%3E%3Cpath d=&#x27;M76 18 64 63 98 80 56 69z&#x27; fill=&#x27;%23d95f43&#x27;/%3E%3Cpath d=&#x27;M44 102 56 57 22 40 64 51z&#x27; fill=&#x27;%23527a39&#x27;/%3E%3Ccircle cx=&#x27;60&#x27; cy=&#x27;60&#x27; r=&#x27;7&#x27; fill=&#x27;%2317211f&#x27;/%3E%3C/svg%3E">
       <div>
         <span class="tag">Prompt Compass 0.1.0-beta.1</span>
         <h1>Download Prompt Compass</h1>
@@ -78,39 +78,44 @@
     <section id="get-started" class="tab-panel" role="tabpanel" aria-labelledby="tab-get-started">
       <div class="card">
         <h2>What is Prompt Compass?</h2>
-        <p>Prompt Compass is a local prompt-engineering companion. It routes broad requests, diagnoses weak prompts, improves existing prompts, builds new prompts from intent, compares versions, and checks whether a prompt is ready for the model or surface where it will run.</p>
+        <p>Prompt Compass is a prompt-engineering assistant for people who need AI instructions to work clearly and reliably. Paste in a rough prompt, a messy task, or a fragile instruction set, and it helps diagnose what is missing, improve the wording, target the right model or surface, and preflight the prompt before you use it. It can be used through the plugin, MCP/extension, or skill files below.</p>
       </div>
 
       <section class="grid">
         <div class="card">
           <h2>Claude Plugin</h2>
-          <p>Best for Claude hosts that accept custom plugin uploads. Bundles the Prompt Compass MCP server plus the shared skill.</p>
+          <p>Best for Claude.ai, Claude Cowork, or Claude Code when your host accepts custom plugins. This bundle includes the Prompt Compass MCP/extension and skill.</p>
           <p><span class="tag">v0.1.0-beta.1</span></p>
           <a class="button" href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/prompt-compass-plugin.zip" download>Download Plugin</a>
+          <p><a href="#install-cowork">&rarr; How to install</a></p>
         </div>
         <div class="card">
           <h2>Claude Desktop Extension</h2>
-          <p>Best for Claude Desktop extension install. This is the Claude-native MCPB package.</p>
+          <p>Best if you use Claude Desktop. This is the MCP connector installed through Settings &rarr; Extensions.</p>
           <p><span class="tag">v0.1.0-beta.1</span></p>
           <a class="button secondary" href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/prompt-compass-0.1.0.mcpb" download>Download Extension</a>
+          <p><a href="#install-desktop">&rarr; How to install</a></p>
         </div>
         <div class="card">
           <h2>Skill / Prompt-Only Alternative</h2>
-          <p>A standalone skill Claude can read without the MCP connector. It preserves Prompt Compass workflow guidance even when tools are unavailable.</p>
+          <p>A standalone skill Claude can read without the MCP connector. Useful on its own or alongside the plugin or extension.</p>
           <p><span class="tag">v0.1.0-beta.1</span></p>
           <a class="button ghost" href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/prompt-compass.skill" download>Download Skill</a>
           <a class="button ghost" href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/skill.zip" download>Download Skill Zip</a>
+          <p><a href="#install-skill">&rarr; How to install</a></p>
         </div>
       </section>
 
       <div class="card">
         <h2>Pick Your Path</h2>
+        <p>Want your AI assistant to help install this? <a href="#ai-install-prompt">Use the AI-assisted install prompt.</a></p>
         <table>
-          <tr><td><strong>I use a Claude plugin host</strong></td><td>Download <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/prompt-compass-plugin.zip" download><code>prompt-compass-plugin.zip</code></a></td></tr>
-          <tr><td><strong>I use Claude Desktop</strong></td><td>Download <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/prompt-compass-0.1.0.mcpb" download><code>prompt-compass-0.1.0.mcpb</code></a></td></tr>
-          <tr><td><strong>I want prompt-only guidance</strong></td><td>Download <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/prompt-compass.skill" download><code>prompt-compass.skill</code></a> or <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/skill.zip" download><code>skill.zip</code></a></td></tr>
-          <tr><td><strong>I am a developer or reviewer</strong></td><td>Download <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/prompt-compass-source.zip" download><code>prompt-compass-source.zip</code></a></td></tr>
+          <tr><td><strong>I use Claude.ai, Claude Cowork, or Claude Code</strong></td><td>Download <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/prompt-compass-plugin.zip" download><code>prompt-compass-plugin.zip</code></a></td></tr>
+          <tr><td><strong>I use Claude Desktop</strong></td><td>Download the MCP connector <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/prompt-compass-0.1.0.mcpb" download><code>prompt-compass-0.1.0.mcpb</code></a></td></tr>
+          <tr><td><strong>I want the skill / prompt-only version</strong></td><td>Download <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/prompt-compass.skill" download><code>prompt-compass.skill</code></a> or <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/skill.zip" download><code>skill.zip</code></a></td></tr>
         </table>
+        <p><strong>You can install more than one.</strong> Start with the row that matches how you use Claude. The skill can also be installed alongside the plugin or extension when you want the prompt-only version available too.</p>
+        <p>Using Codex? See the FAQ tab for technical-user guidance.</p>
       </div>
 
       <div class="card">
@@ -151,34 +156,114 @@ What I want the AI to help with:
     </section>
 
     <section id="faq" class="tab-panel" role="tabpanel" aria-labelledby="tab-faq" hidden>
-      <details class="card" open>
-        <summary>Who is Prompt Compass for?</summary>
-        <p>It is for people who know what they want from AI but need help turning intent into durable instructions: writers, researchers, product people, educators, analysts, developers, and technically curious users.</p>
-      </details>
-      <details class="card">
-        <summary>Does it send my prompts to a cloud service?</summary>
-        <p>The MCP package is local-first. The bundled knowledge base runs locally. Personal overlay records are stored in user app data unless you configure a different path.</p>
-      </details>
-      <details class="card">
-        <summary>What is Agent Mode?</summary>
-        <p>Agent Mode is an explicit advanced option that creates an approval-gated committee plan. It does not silently spawn agents, and it does not bypass host permissions.</p>
-      </details>
+      <div class="card author-card">
+        <img class="author-photo" src="assets/jonathan-kyle-hobson.png" alt="Jonathan Kyle Hobson">
+        <div>
+          <h2>About the author</h2>
+          <p><strong>Jonathan Kyle Hobson</strong> is a UX researcher, product strategist, and AI tool builder with 10+ years of experience across design, storytelling, and emerging technology. He holds a master's degree in User Experience from Arizona State University. Kyle created Critical Compass to give nonprofits, advocacy teams, and public communicators a practical, rigorous way to pressure-test their work, because high-stakes writing deserves the same scrutiny as high-stakes decisions.</p>
+          <p><a href="https://www.linkedin.com/in/jonathankylehobson/" target="_blank" rel="noopener">Connect on LinkedIn</a></p>
+        </div>
+      </div>
+      <div class="section-heading">
+        <h2>Frequently Asked Questions</h2>
+        <p>Quick answers about what Prompt Compass does, how the files differ, and what to expect during install.</p>
+      </div>
+      <div class="card">
+        <h2>What is prompting / prompt engineering?</h2>
+        <p>Prompting is the practice of giving an AI clear instructions, context, examples, constraints, and success criteria. Prompt engineering is the more deliberate version: shaping those instructions so the model understands the task and produces a useful result.</p>
+      </div>
+      <div class="card">
+        <h2>What does Prompt Compass do? What is it for?</h2>
+        <p>Prompt Compass helps diagnose weak prompts, improve existing prompts, build new prompts from intent, compare prompt versions, and check whether a prompt is ready for the model or surface where it will run.</p>
+      </div>
+      <div class="card">
+        <h2>What is an MCP connector or extension?</h2>
+        <p>MCP means Model Context Protocol. In this context, Claude may call the local tool connection an MCP, connector, or extension. Prompt Compass's extension is the MCP connector: it gives Claude tools plus bundled prompt-engineering resources. <a href="https://jonathankhobson.github.io/what-is-an-mcp/">Learn more about MCPs.</a></p>
+      </div>
+      <div class="card">
+        <h2>What is the difference between the plugin, extension, and skill?</h2>
+        <p><strong>Plugin zip:</strong> the Claude.ai, Claude Cowork, or Claude Code bundle. It includes the MCP/extension and skill. <strong>Extension file:</strong> the Claude Desktop MCP connector, which gives Claude tools and bundled resources so it can do more with fewer tokens. <strong>Skill:</strong> the prompt-only alternative Claude can read without the MCP, though it may use more context. You can install more than one.</p>
+      </div>
+      <div class="card">
+        <h2>Does this work in Codex?</h2>
+        <p>Yes. Prompt Compass can work with Codex because Codex can use local MCPs, skills, and plugins. This page does not provide a one-click Codex install path; technical Codex users can use the source zip or the AI-assisted install prompt in Advanced.</p>
+      </div>
+      <div class="card">
+        <h2>Is Prompt Compass safe to install?</h2>
+        <p>Downloading anything from the internet carries real risk: malicious code, data collection, hidden scripts. Prompt Compass is designed to reduce that surface area: it runs locally on your machine, requires no API key, bundles its own files, and does no background scanning. That said, no third-party tool is zero risk. Before installing, you're encouraged to review the source files or have a trusted technical contact look them over. Claude's warning is the standard prompt it shows for all locally shared third-party plugins, not a flag specific to this tool. <a href="https://jonathankhobson.github.io/what-is-an-mcp/#mcp-risks">Learn more about MCP risks.</a></p>
+      </div>
+      <div class="card">
+        <h2>Do I need a GitHub account?</h2>
+        <p>No. The download buttons go directly to the files. GitHub is only where the files are hosted.</p>
+      </div>
     </section>
 
     <section id="install" class="tab-panel" role="tabpanel" aria-labelledby="tab-install" hidden>
-      <div class="card">
-        <h2>Install Guide</h2>
+      <details id="install-claude-web" class="card">
+        <summary>Claude.ai Web</summary>
         <ol>
-          <li>Download the package that matches your host.</li>
-          <li>Install or upload it through that host's extension/plugin/skill flow.</li>
-          <li>Restart or open a fresh task if your host does not hot-load new MCPs.</li>
+          <li>Download <code>prompt-compass-plugin.zip</code>.</li>
+          <li>Open Claude.ai in your browser.</li>
+          <li>Open the customization, plugin, or skills area available in your account.</li>
+          <li>Add the plugin zip if your account supports personal plugins.</li>
+          <li>If plugin install is not available, use the skill / prompt-only alternative instead.</li>
           <li>Smoke test with: <code>Use Prompt Compass and call get_started.</code></li>
         </ol>
-      </div>
-      <div class="card notice">
-        <h2>Safety Note</h2>
-        <p>Prompt Compass should be added, not used to overwrite unrelated MCP configuration. If you install from source, preserve existing servers and use absolute paths.</p>
-      </div>
+      </details>
+
+      <details id="install-cowork" class="card">
+        <summary>Claude Cowork</summary>
+        <ol>
+          <li>Download <code>prompt-compass-plugin.zip</code>.</li>
+          <li>Open Claude Cowork.</li>
+          <li>Click <strong>Customize</strong> in the left sidebar.</li>
+          <li>Under <strong>Personal Plugins</strong>, click the <strong>+</strong> button.</li>
+          <li>Hover over <strong>Create Plugin</strong>, then click <strong>Upload Plugin</strong>.</li>
+          <li>Drag the zip file into the upload area.</li>
+          <li>Done. Prompt Compass is now active in your session.</li>
+        </ol>
+      </details>
+
+      <details id="install-claude-code" class="card">
+        <summary>Claude Code</summary>
+        <ol>
+          <li>Download <code>prompt-compass-plugin.zip</code>.</li>
+          <li>Open Claude Code.</li>
+          <li>Use the current plugin or customization flow for your Claude Code environment.</li>
+          <li>Add the plugin zip when prompted.</li>
+          <li>Open a fresh session if the plugin does not appear immediately.</li>
+          <li>Smoke test with: <code>Use Prompt Compass and call get_started.</code></li>
+        </ol>
+      </details>
+
+      <details id="install-desktop" class="card">
+        <summary>Claude Desktop</summary>
+        <ol>
+          <li>Download <code>prompt-compass-0.1.0.mcpb</code>.</li>
+          <li>Open the Claude Desktop app.</li>
+          <li>Go to <strong>Settings</strong> &rarr; <strong>Extensions</strong>.</li>
+          <li>Drag the downloaded file into the Extensions panel.</li>
+          <li>A security warning will appear. This is expected; see the FAQ tab for why.</li>
+          <li>Done.</li>
+        </ol>
+      </details>
+
+      <details id="install-skill" class="card">
+        <summary>Skill / Prompt-Only Alternative</summary>
+        <ol>
+          <li>Download <code>prompt-compass.skill</code> or <code>skill.zip</code>. Either works.</li>
+          <li>Open Claude or Claude Code.</li>
+          <li>Go to <strong>Skills</strong>, then click the <strong>+</strong> button.</li>
+          <li>Hover over <strong>Create Skill</strong>, then click <strong>Upload Skill</strong>.</li>
+          <li>Drag in your downloaded file.</li>
+          <li>Done. Use this on its own, or install it alongside the plugin or extension when you want the prompt-only version available too.</li>
+        </ol>
+      </details>
+
+      <section class="card notice">
+        <h2>If Install Fails</h2>
+        <p>Use the <a href="#diagnostics-prompt">diagnostic prompt</a> in the Advanced tab before editing any files manually.</p>
+      </section>
     </section>
 
     <section id="example" class="tab-panel" role="tabpanel" aria-labelledby="tab-example" hidden>
@@ -190,55 +275,253 @@ What I want the AI to help with:
 
     <section id="advanced" class="tab-panel" role="tabpanel" aria-labelledby="tab-advanced" hidden>
       <div class="card">
-        <h2>Checksums</h2>
-        <p>Use these SHA-256 values to verify downloaded artifacts.</p>
-        <table>
-<tr><td><code>checksums.txt</code></td><td><code>15707fff936e66e07fde3fea15ce99e21b68683c13f546ca9cbb7b1c7093160c</code></td></tr>
-<tr><td><code>prompt-compass-0.1.0.mcpb</code></td><td><code>65085e810b5c7840044e7febaa4c792faff3a9016dbda73ea67c061d6ac27e8c</code></td></tr>
-<tr><td><code>prompt-compass-plugin.zip</code></td><td><code>3de388a379812097cc088534e2c42151212d02f8572c3ce9ae3d8c877b0ceeea</code></td></tr>
-<tr><td><code>prompt-compass-source.zip</code></td><td><code>b05f001ac6da920eef63898f2aaa90cce04357219dc013acf07cbb014a564fda</code></td></tr>
+        <h2>Advanced</h2>
+        <p>This section is for IT reviewers, security-conscious users, and anyone troubleshooting installation.</p>
+        <p><a class="button" href="https://github.com/JonathanKHobson/prompt-compass/releases/tag/v0.1.0-beta.1">View full release notes</a></p>
+        <section>
+          <h2>Download source files</h2>
+          <p>Use this zip if you want to inspect, modify, or rebuild Prompt Compass yourself. It excludes private state, generated release files, env files, caches, and machine-specific artifacts.</p>
+          <p><a class="button ghost" href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/prompt-compass-source.zip" download>Download Source Zip</a></p>
+        </section>
+        <details>
+          <summary>Advanced: Verify Download</summary>
+          <p>These SHA-256 checksums help technical reviewers confirm that downloaded files match this release.</p>
+          <table><tr><td><code>checksums.txt</code></td><td><code>a980ba7903ba25013b5a803547e8424490af2ab1968a93c7f10c4d7490748ad7</code></td></tr>
+<tr><td><code>prompt-compass-0.1.0.mcpb</code></td><td><code>20aaee7e6a4c6e4372dada6af4af3988632be30ddda09c519b96856be9830ff4</code></td></tr>
+<tr><td><code>prompt-compass-plugin.zip</code></td><td><code>e6a926b78c21afd81ed0a70045ba3303e0aca80ca64547c9614d51d839428fda</code></td></tr>
+<tr><td><code>prompt-compass-source.zip</code></td><td><code>9afb45b97fb2f563168a3c040a171d86bf5bd987d6d7b095391a98d5d2a5b6d5</code></td></tr>
 <tr><td><code>prompt-compass.skill</code></td><td><code>77911d338373cc0d3637a3ff07b5fbb72ae81e12449a4b69c76d1c543ce30608</code></td></tr>
-<tr><td><code>skill.zip</code></td><td><code>460ef16327ede26813416b3ac412cf316584807731705401b047c80b44344645</code></td></tr>
-        </table>
+<tr><td><code>skill.zip</code></td><td><code>460ef16327ede26813416b3ac412cf316584807731705401b047c80b44344645</code></td></tr></table>
+        </details>
+      </div>
+      <div id="ai-install-prompt" class="card">
+        <h2>AI-Assisted Install Prompt</h2>
+        <p>Use this with a coding assistant that can inspect downloads, check your computer setup, and edit local config files. The local MCP source install is the most reliable automated path; for plugin, extension, and skill files, the assistant should determine the current add/install method and guide any user steps it cannot safely complete.</p>
+        <button class="button" type="button" id="copy-ai-install">Copy install prompt</button>
+        <textarea id="ai-install-text" readonly>You are a careful, technically conservative AI install assistant. Your job is to help me add or install Prompt Compass - optionally including the local MCP source, plugin, MCPB/Desktop extension, and/or skill - safely, without modifying unrelated configuration or introducing unexpected dependencies. Do not delete anything; only add.
+
+Prompt Compass is a prompt engineering assistant for diagnosing, improving, building, and preflighting AI prompts.
+
+Release page: https://jonathankhobson.github.io/prompt-compass/
+
+PHASE 1 - Understand my environment
+Before doing anything, ask me:
+1. Which AI client are you using? (Claude Cowork, Claude Code, Claude Desktop, Codex, or other)
+2. Which operating system are you on? (macOS, Windows, Linux, WSL, or other)
+3. Have you installed any MCPs, plugins, or skills before? (yes / no / unsure)
+4. What do you want added or installed? (local MCP source / plugin / MCPB Desktop extension / skill / all)
+
+Do not proceed to Phase 2 until I answer all four questions.
+
+PHASE 2 - Identify the right install path
+Based on my answers, recommend the appropriate install path(s). Multiple paths can be installed together.
+
+Install methods and what you can automate:
+- Local MCP source zip - usually the most automatable path for local clients such as Claude Desktop, Claude Code, or Codex if you can access my filesystem. Download the source zip, unpack it into a stable local folder, and add a config entry that launches the local MCP process.
+- Plugin zip - add/install support depends on the client. Download and inspect the plugin zip, then determine whether the current client supports adding it automatically or whether I need to complete a UI step.
+- MCPB/Desktop extension file - add/install support depends on the client. Download and inspect the MCPB file, then determine whether the current client supports adding it automatically or whether I need to complete a UI step.
+- Skill or skill zip - add/install support depends on the client. Download and inspect the skill file, then determine whether the current client supports adding it automatically or whether I need to complete a UI step.
+
+Important distinction:
+- Treat the local MCP source install as the reliably automatable path, because it can be configured by pointing a local client at a local command.
+- For plugin, MCPB/Desktop extension, and skill files, do not assume the add/install method. Check the current client, current docs, local files, and visible UI. Do as much safely as you can, then guide me through any step that requires my action.
+- If the UI or install method has changed, use the current official docs or the client&#x27;s visible UI rather than stale instructions.
+
+For each path you recommend, state in one sentence what you can do automatically and what I may need to do manually. Ask me to confirm before proceeding.
+
+PHASE 3 - Review before installing
+Open the release page and identify the current version.
+Download only the file(s) needed for the confirmed install path(s).
+Before installing, check for:
+- Unexpected network calls or external API dependencies
+- Hidden API keys or credential requirements
+- Suspicious scripts or broad file system access
+- Unrelated third-party MCPs or services bundled in
+
+If you find anything concerning, STOP. Describe the concern clearly and ask me how to proceed. Do not install until I confirm.
+
+PHASE 4 - Install safely
+For a local MCP source install:
+- Prefer a stable local install folder and avoid running directly from a temporary download folder.
+- Read existing config files before editing them.
+- Preserve all unrelated MCP servers and settings.
+- Back up any config file before changing it.
+- Prefer a direct interpreter command with absolute paths instead of shell wrappers.
+
+Common config locations to check, then verify against current docs and the actual client:
+- Claude Desktop on macOS: ~/Library/Application Support/Claude/claude_desktop_config.json
+- Claude Desktop on Windows: %APPDATA%\Claude\claude_desktop_config.json
+- Claude Desktop on Linux or unofficial builds: location may vary; check current docs and the app config directory before editing.
+- Codex on macOS/Linux: ~/.codex/config.toml
+- Codex on Windows: %USERPROFILE%\.codex\config.toml
+- Claude Code project MCP config: .mcp.json in the workspace root
+
+Known local-MCP troubleshooting rules:
+- Existing Codex sessions usually do not hot-load new MCP config; start a fresh session after editing.
+- Claude Desktop usually needs a full quit/reopen after config changes.
+- For Codex, validate the config if a validator is available before restarting.
+- For Claude Code, confirm the user opened the workspace root that contains .mcp.json.
+- If files live on /Volumes or another external drive, avoid shell wrappers when possible and prefer a direct interpreter command.
+- If Python behaves strangely on macOS external drives, check for AppleDouble sidecars such as ._* or .__* and consider keeping the runtime in a stable home-directory path while pointing it at the project/data.
+
+For plugin, MCPB/Desktop extension, or skill installs:
+- Do not hand-edit installed plugin, extension, or skill cache folders.
+- Download and inspect the package, then determine the current add/install method for the user&#x27;s client.
+- If a UI step is required, guide me through it clearly and wait for me to confirm completion.
+- Do not add paid services, external APIs, provider keys, or third-party MCPs unless I explicitly ask.
+
+PHASE 5 - Smoke test
+After installing, confirm Prompt Compass is available:
+- If you installed the local MCP source on Claude Desktop, Claude Code, or Codex, remind me to restart or start a fresh session before expecting the MCP to appear.
+- If MCP tools are active: call get_started or prompt_compass_overview.
+- If only the skill is available: ask Prompt Compass to improve this prompt: &quot;Help me explain my program impact better.&quot;
+- If install fails: tell me whether the issue is package validation, MCP launch, config syntax, missing dependency, wrong workspace root, client restart needed, or unsupported-client behavior - and suggest one concrete next step.
+
+Constraints throughout:
+- One phase at a time. Do not skip ahead.
+- Ask rather than assume when uncertain.
+- Prefer the most conservative option when two paths are equally valid.
+- Preserve unrelated configuration. Do not delete anything; only add.
+- Use current docs or visible client UI when the install method is unclear.
+</textarea>
       </div>
       <div class="card">
-        <h2>Developer Source</h2>
-        <p>The source zip is for review and rebuild. It excludes private state, generated packages, caches, sidecars, virtualenvs, and local app-data.</p>
-        <a class="button" href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/prompt-compass-source.zip" download>Download Source Zip</a>
-        <a class="button ghost" href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.1/checksums.txt" download>Download Checksums</a>
+        <h2>Diagnostics Prompt</h2>
+        <p>If installation fails, copy this prompt into Claude, Claude Code, or Codex and attach the file you tried to install.</p>
+        <button class="button" type="button" id="copy-diagnostics">Copy diagnostics prompt</button>
+        <textarea id="diagnostics-prompt" readonly># Prompt Compass MCPB Installer / Diagnostic Prompt
+
+Paste this into Claude, Claude Code, Codex, or another capable coding assistant when you want help installing or diagnosing Prompt Compass.
+
+```text
+You are helping me install or diagnose the Prompt Compass MCPB/Desktop Extension in Claude Desktop.
+
+Goal:
+- Get Prompt Compass installed and visible as an MCP server/tool set.
+- Do not delete or overwrite any existing Claude Desktop MCP configuration.
+- Preserve unrelated MCP servers and settings.
+- Prefer MCPB/Desktop Extension installation over manual JSON editing.
+
+Context:
+- The package file should be named like prompt-compass-0.1.0.mcpb.
+- Prompt Compass is a local MCP server for diagnosing, improving, building, and preflighting AI prompts.
+- It should expose tools such as get_started, prompt_compass_overview, route_prompt_request, analyze_prompt, diagnose_prompt, improve_prompt, build_prompt, compare_prompts, and preflight_prompt.
+- Personal overlay records should stay in user app data unless I explicitly configure another path.
+
+Steps:
+1. Confirm Claude Desktop supports Extensions or MCPB/Desktop Extensions.
+2. Help me install the .mcpb through Claude Desktop Settings &gt; Extensions.
+3. Restart Claude Desktop if needed.
+4. Check whether Prompt Compass appears in the available MCP tools.
+5. Run a small smoke prompt:
+   &quot;Call get_started for Prompt Compass and tell me the first five-minute path.&quot;
+6. If it fails, diagnose in this order:
+   - Is the .mcpb file present and not still zipped inside another archive?
+   - Is Claude Desktop updated enough to show Settings &gt; Extensions?
+   - Did UV dependency setup fail on first launch?
+   - Are there Claude Desktop MCP logs showing a process launch error?
+   - Are writable files being redirected to user app data rather than the extension folder?
+   - Is any failure specific to personal overlay storage rather than the core prompt tools?
+
+Safety rules:
+- Do not add provider keys unless I explicitly ask.
+- Do not overwrite existing MCP servers or unrelated config.
+- Do not merge, install, or call third-party MCPs while diagnosing this install.
+- If manual config inspection is needed, read the current config first and preserve all existing entries.
+
+Expected result:
+- Prompt Compass is installed.
+- get_started and prompt_compass_overview work.
+- If a feature is unavailable, explain whether it is an install issue, dependency issue, personal overlay limitation, client restart issue, or unsupported-client behavior.
+```
+</textarea>
       </div>
     </section>
   </main>
   <footer>
-    <div class="card author-card">
-      <img class="author-photo" alt="Prompt Compass badge" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='16' fill='%23f8fbf9'/%3E%3Ccircle cx='60' cy='60' r='44' fill='none' stroke='%230f766e' stroke-width='8'/%3E%3Cpath d='M34 86 58 22l30 74-29-20z' fill='%23d95f43'/%3E%3Ccircle cx='60' cy='60' r='7' fill='%2317211f'/%3E%3C/svg%3E">
-      <div>
-        <h2>Prompt Compass</h2>
-        <p>A local-first prompt workflow package by Jonathan Kyle Hobson.</p>
-      </div>
-    </div>
+    <p>Prompt Compass is local-first by default: no provider key is required for the bundled prompt-engineering workflows.</p>
   </footer>
   <script>
-    const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
-    const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
-    function activateTab(target) {
-      tabs.forEach(tab => tab.setAttribute('aria-selected', String(tab.dataset.tabTarget === target)));
-      panels.forEach(panel => { panel.hidden = panel.id !== target; });
-      if (location.hash !== '#' + target) history.replaceState(null, '', '#' + target);
-    }
-    tabs.forEach(tab => tab.addEventListener('click', () => activateTab(tab.dataset.tabTarget)));
-    const initial = location.hash.replace('#', '');
-    if (initial && document.getElementById(initial)) activateTab(initial);
-    document.querySelectorAll('button[id^="copy-"]').forEach(button => {
-      button.addEventListener('click', async () => {
-        const textarea = document.getElementById('prompt-' + button.id);
-        if (!textarea) return;
-        await navigator.clipboard.writeText(textarea.value);
-        const original = button.textContent;
-        button.textContent = 'Copied';
-        setTimeout(() => { button.textContent = original; }, 1200);
+    const tabButtons = Array.from(document.querySelectorAll("[data-tab-target]"));
+    const tabPanels = Array.from(document.querySelectorAll(".tab-panel"));
+    const installAnchorIds = new Set(["install-claude-web", "install-cowork", "install-claude-code", "install-desktop", "install-skill"]);
+    const advancedAnchorIds = new Set(["ai-install-prompt", "diagnostics-prompt"]);
+
+    function showTab(tabId, updateHash = true) {
+      const targetPanel = document.getElementById(tabId) || document.getElementById("get-started");
+      tabButtons.forEach((button) => {
+        const selected = button.dataset.tabTarget === targetPanel.id;
+        button.setAttribute("aria-selected", String(selected));
       });
+      tabPanels.forEach((panel) => {
+        panel.hidden = panel.id !== targetPanel.id;
+      });
+      if (updateHash) {
+        history.replaceState(null, "", "#" + targetPanel.id);
+      }
+    }
+
+    function routeHash(updateHash = false) {
+      const hash = window.location.hash.replace("#", "");
+      const panelId = installAnchorIds.has(hash) ? "install" : (advancedAnchorIds.has(hash) ? "advanced" : (hash || "get-started"));
+      showTab(panelId, updateHash);
+      if (installAnchorIds.has(hash) || advancedAnchorIds.has(hash)) {
+        const target = document.getElementById(hash);
+        if (target) {
+          if ("open" in target) {
+            target.open = true;
+          }
+          window.requestAnimationFrame(() => {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+        }
+      }
+    }
+
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", () => showTab(button.dataset.tabTarget));
     });
+
+    window.addEventListener("hashchange", () => {
+      routeHash(false);
+    });
+
+    const installSteps = Array.from(document.querySelectorAll("#install details"));
+    const openInstallStepsOnMobile = () => {
+      const openOnMobile = window.matchMedia("(max-width: 720px)").matches;
+      installSteps.forEach((details) => {
+        details.open = openOnMobile;
+      });
+    };
+    openInstallStepsOnMobile();
+    routeHash(false);
+
+    function wireCopyButton(buttonId, textareaId) {
+      const copyButton = document.getElementById(buttonId);
+      const promptText = document.getElementById(textareaId);
+      if (!copyButton || !promptText) {
+        return;
+      }
+      const defaultLabel = copyButton.textContent;
+      copyButton.addEventListener("click", async () => {
+        promptText.select();
+        try {
+          await navigator.clipboard.writeText(promptText.value);
+          copyButton.textContent = "Copied";
+        } catch (_error) {
+          document.execCommand("copy");
+          copyButton.textContent = "Copied";
+        }
+        window.setTimeout(() => {
+          copyButton.textContent = defaultLabel;
+        }, 1600);
+      });
+    }
+    wireCopyButton("copy-quick", "prompt-copy-quick");
+    wireCopyButton("copy-guided", "prompt-copy-guided");
+    wireCopyButton("copy-build", "prompt-copy-build");
+    wireCopyButton("copy-ai-install", "ai-install-text");
+    wireCopyButton("copy-diagnostics", "diagnostics-prompt");
   </script>
 </body>
 </html>

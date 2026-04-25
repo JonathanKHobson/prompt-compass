@@ -83,8 +83,8 @@
 
       <section class="grid">
         <div class="card">
-          <h2>Claude Plugin</h2>
-          <p>Best for Claude.ai, Claude Cowork, or Claude Code when your host accepts custom plugins. This bundle includes the Prompt Compass MCP/extension and skill.</p>
+          <h2>Claude Cowork Plugin</h2>
+          <p>Best for Claude Cowork or Claude Code. This bundle includes the Prompt Compass MCP/extension and skill.</p>
           <p><span class="tag">v0.1.0-beta.2</span></p>
           <a class="button" href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.2/prompt-compass-plugin.zip" download>Download Plugin</a>
           <p><a href="#install-cowork">&rarr; How to install</a></p>
@@ -110,7 +110,7 @@
         <h2>Pick Your Path</h2>
         <p>Want your AI assistant to help install this? <a href="#ai-install-prompt">Use the AI-assisted install prompt.</a></p>
         <table>
-          <tr><td><strong>I use Claude.ai, Claude Cowork, or Claude Code</strong></td><td>Download <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.2/prompt-compass-plugin.zip" download><code>prompt-compass-plugin.zip</code></a></td></tr>
+          <tr><td><strong>I use Claude Cowork or Claude Code</strong></td><td>Download <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.2/prompt-compass-plugin.zip" download><code>prompt-compass-plugin.zip</code></a></td></tr>
           <tr><td><strong>I use Claude Desktop</strong></td><td>Download the MCP connector <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.2/prompt-compass-0.1.0.mcpb" download><code>prompt-compass-0.1.0.mcpb</code></a></td></tr>
           <tr><td><strong>I want the skill / prompt-only version</strong></td><td>Download <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.2/prompt-compass.skill" download><code>prompt-compass.skill</code></a> or <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.2/skill.zip" download><code>skill.zip</code></a></td></tr>
         </table>
@@ -160,7 +160,7 @@ What I want the AI to help with:
         <img class="author-photo" src="assets/jonathan-kyle-hobson.png" alt="Jonathan Kyle Hobson">
         <div>
           <h2>About the author</h2>
-          <p><strong>Jonathan Kyle Hobson</strong> is a UX researcher, product strategist, and AI tool builder with 10+ years of experience across design, storytelling, and emerging technology. He holds a master's degree in User Experience from Arizona State University. Kyle created Critical Compass to give nonprofits, advocacy teams, and public communicators a practical, rigorous way to pressure-test their work, because high-stakes writing deserves the same scrutiny as high-stakes decisions.</p>
+          <p><strong>Jonathan Kyle Hobson</strong> is a UX researcher, product strategist, and AI tool builder with 10+ years of experience across design, storytelling, and emerging technology. He holds a master's degree in User Experience from Arizona State University. Kyle created Prompt Compass to make prompt engineering more concrete, testable, and useful for people who need AI instructions to work reliably.</p>
           <p><a href="https://www.linkedin.com/in/jonathankylehobson/" target="_blank" rel="noopener">Connect on LinkedIn</a></p>
         </div>
       </div>
@@ -182,7 +182,7 @@ What I want the AI to help with:
       </div>
       <div class="card">
         <h2>What is the difference between the plugin, extension, and skill?</h2>
-        <p><strong>Plugin zip:</strong> the Claude.ai, Claude Cowork, or Claude Code bundle. It includes the MCP/extension and skill. <strong>Extension file:</strong> the Claude Desktop MCP connector, which gives Claude tools and bundled resources so it can do more with fewer tokens. <strong>Skill:</strong> the prompt-only alternative Claude can read without the MCP, though it may use more context. You can install more than one.</p>
+        <p><strong>Plugin zip:</strong> the Claude Cowork or Claude Code bundle. It includes the MCP/extension and skill. <strong>Extension file:</strong> the Claude Desktop MCP connector, which gives Claude tools and bundled resources so it can do more with fewer tokens. <strong>Skill:</strong> the prompt-only alternative Claude can read without the MCP, though it may use more context. You can install more than one.</p>
       </div>
       <div class="card">
         <h2>Does this work in Codex?</h2>
@@ -199,40 +199,21 @@ What I want the AI to help with:
     </section>
 
     <section id="install" class="tab-panel" role="tabpanel" aria-labelledby="tab-install" hidden>
-      <details id="install-claude-web" class="card">
-        <summary>Claude.ai Web</summary>
-        <ol>
-          <li>Download <code>prompt-compass-plugin.zip</code>.</li>
-          <li>Open Claude.ai in your browser.</li>
-          <li>Open the customization, plugin, or skills area available in your account.</li>
-          <li>Add the plugin zip if your account supports personal plugins.</li>
-          <li>If plugin install is not available, use the skill / prompt-only alternative instead.</li>
-          <li>Smoke test with: <code>Use Prompt Compass and call get_started.</code></li>
-        </ol>
-      </details>
+      <section class="card notice">
+        <h2>Verified Claude Surfaces</h2>
+        <p>These install paths have been verified for Claude Desktop, Claude Cowork, and Claude Code. Local MCP/plugin and Desktop extension installs are not verified for Claude.ai in a web browser. The skill may work in other Claude surfaces, but this guide only documents the tested paths below.</p>
+      </section>
 
       <details id="install-cowork" class="card">
-        <summary>Claude Cowork</summary>
+        <summary>Claude Cowork or Claude Code</summary>
         <ol>
           <li>Download <code>prompt-compass-plugin.zip</code>.</li>
-          <li>Open Claude Cowork.</li>
+          <li>Open Claude Cowork or Claude Code.</li>
           <li>Click <strong>Customize</strong> in the left sidebar.</li>
           <li>Under <strong>Personal Plugins</strong>, click the <strong>+</strong> button.</li>
           <li>Hover over <strong>Create Plugin</strong>, then click <strong>Upload Plugin</strong>.</li>
           <li>Drag the zip file into the upload area.</li>
           <li>Done. Prompt Compass is now active in your session.</li>
-        </ol>
-      </details>
-
-      <details id="install-claude-code" class="card">
-        <summary>Claude Code</summary>
-        <ol>
-          <li>Download <code>prompt-compass-plugin.zip</code>.</li>
-          <li>Open Claude Code.</li>
-          <li>Use the current plugin or customization flow for your Claude Code environment.</li>
-          <li>Add the plugin zip when prompted.</li>
-          <li>Open a fresh session if the plugin does not appear immediately.</li>
-          <li>Smoke test with: <code>Use Prompt Compass and call get_started.</code></li>
         </ol>
       </details>
 
@@ -286,10 +267,10 @@ What I want the AI to help with:
         <details>
           <summary>Advanced: Verify Download</summary>
           <p>These SHA-256 checksums help technical reviewers confirm that downloaded files match this release.</p>
-          <table><tr><td><code>checksums.txt</code></td><td><code>a9b4a899a416dd20517949ab8c4e8a933bd408efa149d04b706991dca05ad8b4</code></td></tr>
-<tr><td><code>prompt-compass-0.1.0.mcpb</code></td><td><code>27ccc40f798c37da9339b1fbed740a3acfeedf781478939a7f4da1ad24e150cf</code></td></tr>
-<tr><td><code>prompt-compass-plugin.zip</code></td><td><code>98ae4b81891b41b85b1d57b6d8262d81bdde6c54c51126b21ce4ae51327ea356</code></td></tr>
-<tr><td><code>prompt-compass-source.zip</code></td><td><code>b51cab6ff77bad21e3268200c10e76b59d1482ad101654192406ca1a00bd4bc2</code></td></tr>
+          <table><tr><td><code>checksums.txt</code></td><td><code>459852ee3cc9dcaec7a75b1607a6dc15b11d51fe221ecd14b2df9f3db646c7d5</code></td></tr>
+<tr><td><code>prompt-compass-0.1.0.mcpb</code></td><td><code>ad1d20b642afb253080fa6b7587f1290b40bec37cf32b8d41754f20c724b5757</code></td></tr>
+<tr><td><code>prompt-compass-plugin.zip</code></td><td><code>805598a6823e2207ce9d38cc1c6598e561726777ba51a7e9d5e6d0fe93dacea1</code></td></tr>
+<tr><td><code>prompt-compass-source.zip</code></td><td><code>b11b655243d1a2466bbb963bfd7e3faa6dd165180a6bf38c21c9cdd70df1bd83</code></td></tr>
 <tr><td><code>prompt-compass.skill</code></td><td><code>77911d338373cc0d3637a3ff07b5fbb72ae81e12449a4b69c76d1c543ce30608</code></td></tr>
 <tr><td><code>skill.zip</code></td><td><code>460ef16327ede26813416b3ac412cf316584807731705401b047c80b44344645</code></td></tr></table>
         </details>
@@ -444,7 +425,7 @@ Expected result:
   <script>
     const tabButtons = Array.from(document.querySelectorAll("[data-tab-target]"));
     const tabPanels = Array.from(document.querySelectorAll(".tab-panel"));
-    const installAnchorIds = new Set(["install-claude-web", "install-cowork", "install-claude-code", "install-desktop", "install-skill"]);
+    const installAnchorIds = new Set(["install-cowork", "install-desktop", "install-skill"]);
     const advancedAnchorIds = new Set(["ai-install-prompt", "diagnostics-prompt"]);
 
     function showTab(tabId, updateHash = true) {

@@ -56,6 +56,12 @@
     .example-output { margin: 0 0 18px; }
     .example-output-image { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
     .example-caption { margin-top: 8px; color: var(--muted); font-size: .92rem; }
+    .about-link { margin: -6px 0 18px; }
+    .footer-author { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+    .tool-breakdown { margin: 16px 0 0; }
+    .tool-breakdown dt { font-weight: 700; margin: 14px 0 4px; }
+    .tool-breakdown dd { margin: 0; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); }
+    .tool-breakdown dd p:last-child { margin-bottom: 0; }
     footer { padding: 28px 0 44px; color: var(--muted); }
     .notice { border-left: 4px solid var(--gold); }
     @media (max-width: 640px) { .author-card { grid-template-columns: 1fr; } .author-photo { width: 84px; height: 84px; } }
@@ -75,9 +81,10 @@
   <main>
     <nav class="tab-nav" role="tablist" aria-label="Prompt Compass download sections">
       <button id="tab-get-started" role="tab" aria-controls="get-started" aria-selected="true" data-tab-target="get-started">Get Started</button>
-      <button id="tab-faq" role="tab" aria-controls="faq" aria-selected="false" data-tab-target="faq">About &amp; FAQ</button>
+      <button id="tab-about" role="tab" aria-controls="about" aria-selected="false" data-tab-target="about">About</button>
       <button id="tab-install" role="tab" aria-controls="install" aria-selected="false" data-tab-target="install">Install Guide</button>
       <button id="tab-example" role="tab" aria-controls="example" aria-selected="false" data-tab-target="example">Example</button>
+      <button id="tab-faq" role="tab" aria-controls="faq" aria-selected="false" data-tab-target="faq">FAQ</button>
       <button id="tab-advanced" role="tab" aria-controls="advanced" aria-selected="false" data-tab-target="advanced">Advanced</button>
     </nav>
 
@@ -159,10 +166,9 @@ What I want the AI to help with:
 [Describe the task here]</textarea>
         </div>
       </section>
-    </section>
+    
 
-    <section id="faq" class="tab-panel" role="tabpanel" aria-labelledby="tab-faq" hidden>
-      <div class="card author-card">
+<div class="card author-card">
         <img class="author-photo" src="assets/jonathan-kyle-hobson.png" alt="Jonathan Kyle Hobson">
         <div>
           <h2>About the author</h2>
@@ -170,41 +176,240 @@ What I want the AI to help with:
           <p><a href="https://www.linkedin.com/in/jonathankylehobson/" target="_blank" rel="noopener">Connect on LinkedIn</a></p>
         </div>
       </div>
-      <div class="section-heading">
-        <h2>Frequently Asked Questions</h2>
-        <p>Quick answers about what Prompt Compass does, how the files differ, and what to expect during install.</p>
-      </div>
+      <p class="about-link"><a href="#about">Read more about this project &rarr;</a></p>
+    </section>
+
+    <section id="about" class="tab-panel" role="tabpanel" aria-labelledby="tab-about" hidden>
       <div class="card">
-        <h2>What is prompting / prompt engineering?</h2>
-        <p>Prompting is the practice of giving an AI clear instructions, context, examples, constraints, and success criteria. Prompt engineering is the more deliberate version: shaping those instructions so the model understands the task and produces a useful result.</p>
+        <h2>What Is Prompt Compass?</h2>
+        <p>[PLACEHOLDER &mdash; OVERVIEW COPY: plain-language explanation of what the MCP is and does, slightly more in-depth than what other tabs say. Primary audience: non-technical. Secondary audience: technical. Do not write filler prose &mdash; leave this placeholder intact.]</p>
       </div>
+
       <div class="card">
-        <h2>What does Prompt Compass do? What is it for?</h2>
-        <p>Prompt Compass helps diagnose weak prompts, improve existing prompts, build new prompts from intent, compare prompt versions, and check whether a prompt is ready for the model or surface where it will run.</p>
+        <h2>How It's Built</h2>
+        <p>[PLACEHOLDER &mdash; TECHNICAL SUMMARY: high-level description of what the MCP contains and how it's structured. Light technical depth &mdash; not deep dev detail. Do not write filler prose &mdash; leave this placeholder intact.]</p>
       </div>
+
       <div class="card">
-        <h2>What is an MCP connector or extension?</h2>
-        <p>MCP means Model Context Protocol. In this context, Claude may call the local tool connection an MCP, connector, or extension. Prompt Compass's extension is the MCP connector: it gives Claude tools plus bundled prompt-engineering resources. <a href="https://jonathankhobson.github.io/what-is-an-mcp/">Learn more about MCPs.</a></p>
+        <h2>What's Inside</h2>
+        <p>Every tool this MCP exposes &mdash; what it does and how to call it.</p>
+
+      <dl class="tool-breakdown">
+        <dt><code>prompt_compass_overview</code></dt>
+        <dd>
+          <p>High-level map of what Prompt Compass can do and how to navigate it.</p>
+          <p><strong>Say:</strong> &ldquo;Give me an overview of Prompt Compass.&rdquo;</p>
+        </dd>
+        <dt><code>get_started</code></dt>
+        <dd>
+          <p>First-session guide: routes new users to the right workflow in under five minutes.</p>
+          <p><strong>Say:</strong> &ldquo;I'm new — help me get started with Prompt Compass.&rdquo;</p>
+        </dd>
+        <dt><code>list_tool_surface</code></dt>
+        <dd>
+          <p>Complete inventory of every available tool, grouped by role.</p>
+          <p><strong>Say:</strong> &ldquo;List all Prompt Compass tools.&rdquo;</p>
+        </dd>
+        <dt><code>list_catalog_categories</code></dt>
+        <dd>
+          <p>Shows what kinds of records exist (frameworks, strategies, patterns, terms, etc.).</p>
+          <p><strong>Say:</strong> &ldquo;What categories does Prompt Compass cover?&rdquo;</p>
+        </dd>
+        <dt><code>route_prompt_request</code></dt>
+        <dd>
+          <p>Routes a raw user request to the correct workflow before any deep tool use begins.</p>
+          <p><strong>Say:</strong> &ldquo;Use Prompt Compass&rdquo;</p>
+        </dd>
+        <dt><code>analyze_prompt</code></dt>
+        <dd>
+          <p>Scores an existing prompt and identifies what's weak, missing, or risky.</p>
+          <p><strong>Say:</strong> &ldquo;Analyze this prompt and tell me what's wrong.&rdquo;</p>
+        </dd>
+        <dt><code>diagnose_prompt</code></dt>
+        <dd>
+          <p>Deeper diagnosis with evidence, repair priority, and rewrite readiness — without rewriting.</p>
+          <p><strong>Say:</strong> &ldquo;Diagnose this prompt before I rewrite it.&rdquo;</p>
+        </dd>
+        <dt><code>preflight_prompt</code></dt>
+        <dd>
+          <p>Checks whether a prompt is ready for a specific model or execution surface before running it.</p>
+          <p><strong>Say:</strong> &ldquo;Preflight this prompt for [model/surface].&rdquo;</p>
+        </dd>
+        <dt><code>improve_prompt</code></dt>
+        <dd>
+          <p>Rewrites an existing prompt in quick mode, guided advanced mode, or Agent Mode committee.</p>
+          <p><strong>Say:</strong> &ldquo;Improve this prompt&rdquo;</p>
+        </dd>
+        <dt><code>compare_prompts</code></dt>
+        <dd>
+          <p>Diffs two prompt versions and reports measurable improvements, regressions, and remaining risks.</p>
+          <p><strong>Say:</strong> &ldquo;Compare these two prompts — which is better?&rdquo;</p>
+        </dd>
+        <dt><code>build_prompt</code></dt>
+        <dd>
+          <p>Scaffolds a new prompt from intent when starting from scratch.</p>
+          <p><strong>Say:</strong> &ldquo;Help me build a prompt from scratch for [task].&rdquo;</p>
+        </dd>
+        <dt><code>search_prompt_patterns</code></dt>
+        <dd>
+          <p>Open-ended search across frameworks, strategies, patterns, anti-patterns, techniques, and terms.</p>
+          <p><strong>Say:</strong> &ldquo;Search for prompting techniques related to [topic].&rdquo;</p>
+        </dd>
+        <dt><code>get_framework</code></dt>
+        <dd>
+          <p>Returns the full record for a named prompt framework (template, examples, use notes).</p>
+          <p><strong>Say:</strong> &ldquo;Show me the RISEN framework.&rdquo;</p>
+        </dd>
+        <dt><code>get_pattern</code></dt>
+        <dd>
+          <p>Returns the full record for a named prompt pattern or anti-pattern.</p>
+          <p><strong>Say:</strong> &ldquo;What is the Scope Sprawl anti-pattern?&rdquo;</p>
+        </dd>
+        <dt><code>get_record</code></dt>
+        <dd>
+          <p>Generic named resolver — looks up any Prompt Compass record by name.</p>
+          <p><strong>Say:</strong> &ldquo;Look up [record name] in Prompt Compass.&rdquo;</p>
+        </dd>
+        <dt><code>get_technique</code></dt>
+        <dd>
+          <p>Returns a specific prompt-engineering technique (e.g., self-critique, role-playing).</p>
+          <p><strong>Say:</strong> &ldquo;Explain the chain-of-thought technique.&rdquo;</p>
+        </dd>
+        <dt><code>get_term</code></dt>
+        <dd>
+          <p>Returns a concept definition from the Prompt Compass vocabulary.</p>
+          <p><strong>Say:</strong> &ldquo;Define 'output contract' in prompting terms.&rdquo;</p>
+        </dd>
+        <dt><code>list_frameworks</code></dt>
+        <dd>
+          <p>Browsable snapshot of available frameworks.</p>
+          <p><strong>Say:</strong> &ldquo;List the prompt frameworks in Prompt Compass.&rdquo;</p>
+        </dd>
+        <dt><code>list_strategies</code></dt>
+        <dd>
+          <p>Browsable snapshot of available strategies.</p>
+          <p><strong>Say:</strong> &ldquo;What prompting strategies are available?&rdquo;</p>
+        </dd>
+        <dt><code>list_patterns</code></dt>
+        <dd>
+          <p>Browsable snapshot of structural prompt patterns.</p>
+          <p><strong>Say:</strong> &ldquo;Show me examples of prompt patterns.&rdquo;</p>
+        </dd>
+        <dt><code>list_techniques</code></dt>
+        <dd>
+          <p>Browsable snapshot of single-move tactical techniques.</p>
+          <p><strong>Say:</strong> &ldquo;List prompt techniques I can apply.&rdquo;</p>
+        </dd>
+        <dt><code>list_terms</code></dt>
+        <dd>
+          <p>Browsable vocabulary and concept definitions.</p>
+          <p><strong>Say:</strong> &ldquo;Show me prompting terms and definitions.&rdquo;</p>
+        </dd>
+        <dt><code>list_prompt_templates</code></dt>
+        <dd>
+          <p>Copyable prompt scaffolds from the knowledge base and personal library.</p>
+          <p><strong>Say:</strong> &ldquo;Show me prompt templates I can start from.&rdquo;</p>
+        </dd>
+        <dt><code>list_prompt_examples</code></dt>
+        <dd>
+          <p>Concrete before/after-style reference prompts.</p>
+          <p><strong>Say:</strong> &ldquo;Show me example prompts.&rdquo;</p>
+        </dd>
+        <dt><code>list_anti_patterns</code></dt>
+        <dd>
+          <p>Browsable list of prompt anti-patterns with symptoms, severity, and fixes.</p>
+          <p><strong>Say:</strong> &ldquo;What prompt anti-patterns should I avoid?&rdquo;</p>
+        </dd>
+        <dt><code>get_clarifying_questions</code></dt>
+        <dd>
+          <p>Returns 3–5 targeted questions to fill missing slots in a prompt before rewriting.</p>
+          <p><strong>Say:</strong> &ldquo;Ask me clarifying questions about this prompt.&rdquo;</p>
+        </dd>
+        <dt><code>suggest_strategies</code></dt>
+        <dd>
+          <p>Ranks the best-fitting strategies for a diagnosed prompt shape and model target.</p>
+          <p><strong>Say:</strong> &ldquo;What strategies should I use for this type of prompt?&rdquo;</p>
+        </dd>
+        <dt><code>target_prompt_to_model</code></dt>
+        <dd>
+          <p>Adapts an existing prompt to a specific supported model (Claude, Codex, GPT-4, etc.).</p>
+          <p><strong>Say:</strong> &ldquo;Adapt this prompt for [model name].&rdquo;</p>
+        </dd>
+        <dt><code>target_prompt_to_surface</code></dt>
+        <dd>
+          <p>Adapts a prompt for a specific execution surface (parser, retrieval system, tool workflow).</p>
+          <p><strong>Say:</strong> &ldquo;Adapt this prompt for a tool-workflow surface.&rdquo;</p>
+        </dd>
+        <dt><code>get_model_profile</code></dt>
+        <dd>
+          <p>Returns prompting preferences and known quirks for a target model.</p>
+          <p><strong>Say:</strong> &ldquo;What should I know about prompting [model name]?&rdquo;</p>
+        </dd>
+        <dt><code>save_personal_record</code></dt>
+        <dd>
+          <p>Saves a custom framework, strategy, pattern, technique, or anti-pattern note to your personal overlay.</p>
+          <p><strong>Say:</strong> &ldquo;Save this as a personal Prompt Compass record.&rdquo;</p>
+        </dd>
+        <dt><code>seed_personal_overlay</code></dt>
+        <dd>
+          <p>Guided onboarding to teach Prompt Compass your domains, models, and named methods.</p>
+          <p><strong>Say:</strong> &ldquo;Set up my personal Prompt Compass overlay.&rdquo;</p>
+        </dd>
+        <dt><code>manage_preferences</code></dt>
+        <dd>
+          <p>Reads, previews, or updates Auto Flow preferences (silent mode, clarification behavior, etc.).</p>
+          <p><strong>Say:</strong> &ldquo;Update my Prompt Compass Auto Flow preferences.&rdquo;</p>
+        </dd>
+        <dt><code>delete_personal_record</code></dt>
+        <dd>
+          <p>Removes a personal overlay record (core records are protected).</p>
+          <p><strong>Say:</strong> &ldquo;Delete my personal record named [name].&rdquo;</p>
+        </dd>
+        <dt><code>flag_core_record</code></dt>
+        <dd>
+          <p>Marks a built-in record for review without mutating the core knowledge base.</p>
+          <p><strong>Say:</strong> &ldquo;Flag this Prompt Compass record for review.&rdquo;</p>
+        </dd>
+        <dt><code>list_core_review_flags</code></dt>
+        <dd>
+          <p>Lists open, reviewed, or dismissed flags on core records.</p>
+          <p><strong>Say:</strong> &ldquo;Show my Prompt Compass review flags.&rdquo;</p>
+        </dd>
+        <dt><code>sync_personal_overlay_from_markdown</code></dt>
+        <dd>
+          <p>Syncs personal records from Obsidian/Markdown vault edits back into the runtime overlay.</p>
+          <p><strong>Say:</strong> &ldquo;Sync my personal overlay from Markdown.&rdquo;</p>
+        </dd>
+        <dt><code>search_prompt_library</code></dt>
+        <dd>
+          <p>Searches saved personal prompts, templates, and examples.</p>
+          <p><strong>Say:</strong> &ldquo;Search my saved prompts for [topic].&rdquo;</p>
+        </dd>
+        <dt><code>get_prompt_library_item</code></dt>
+        <dd>
+          <p>Retrieves one saved prompt asset by name or ID.</p>
+          <p><strong>Say:</strong> &ldquo;Get my saved prompt called [name].&rdquo;</p>
+        </dd>
+        <dt><code>save_prompt_library_item</code></dt>
+        <dd>
+          <p>Saves a useful prompt, template, or example to your personal library for later reuse.</p>
+          <p><strong>Say:</strong> &ldquo;Save this prompt to my library.&rdquo;</p>
+        </dd>
+        <dt><code>delete_prompt_library_item</code></dt>
+        <dd>
+          <p>Removes a saved item from the personal prompt library.</p>
+          <p><strong>Say:</strong> &ldquo;Delete my saved prompt called [name].&rdquo;</p>
+        </dd>
+      </dl>
       </div>
+
       <div class="card">
-        <h2>What is the difference between the plugin, extension, and skill?</h2>
-        <p><strong>Plugin zip:</strong> the Claude Cowork or Claude Code bundle. It includes the MCP/extension and skill. <strong>Extension file:</strong> the Claude Desktop MCP connector, which gives Claude tools and bundled resources so it can do more with fewer tokens. <strong>Skill:</strong> the prompt-only alternative Claude can read without the MCP, though it may use more context. You can install more than one.</p>
-      </div>
-      <div class="card">
-        <h2>Does this work in Codex?</h2>
-        <p>Yes. Prompt Compass can work with Codex because Codex can use local MCPs, skills, and plugins. This page does not provide a one-click Codex install path; technical Codex users can use the source zip or the AI-assisted install prompt in Advanced.</p>
-      </div>
-      <div class="card">
-        <h2>Is Prompt Compass safe to install?</h2>
-        <p>Downloading anything from the internet carries real risk: malicious code, data collection, hidden scripts. Prompt Compass is designed to reduce that surface area: it runs locally on your machine, requires no API key, bundles its own files, and does no background scanning. That said, no third-party tool is zero risk. Before installing, you're encouraged to review the source files or have a trusted technical contact look them over. Claude's warning is the standard prompt it shows for all locally shared third-party plugins, not a flag specific to this tool. <a href="https://jonathankhobson.github.io/what-is-an-mcp/#mcp-risks">Learn more about MCP risks.</a></p>
-      </div>
-      <div class="card">
-        <h2>Do I need a GitHub account?</h2>
-        <p>No. The download buttons go directly to the files. GitHub is only where the files are hosted.</p>
+        <h2>How I Use It</h2>
+        <p>[PLACEHOLDER &mdash; AUTHOR WILL COMPLETE: personal usage patterns, prompting strategies, and observed model-specific behaviors with Claude and Codex. Do not write filler prose &mdash; leave intact.]</p>
       </div>
     </section>
 
-    <section id="install" class="tab-panel" role="tabpanel" aria-labelledby="tab-install" hidden>
+<section id="install" class="tab-panel" role="tabpanel" aria-labelledby="tab-install" hidden>
       <section class="card notice">
         <h2>Verified Claude Surfaces</h2>
         <p>These install paths have been verified for Claude Desktop, Claude Cowork, and Claude Code. Local MCP/plugin and Desktop extension installs are not verified for Claude.ai in a web browser. The skill may work in other Claude surfaces, but this guide only documents the tested paths below.</p>
@@ -253,7 +458,7 @@ What I want the AI to help with:
       </section>
     </section>
 
-    <section id="example" class="tab-panel" role="tabpanel" aria-labelledby="tab-example" hidden>
+<section id="example" class="tab-panel" role="tabpanel" aria-labelledby="tab-example" hidden>
       <div class="card">
         <h2>Prompt Compass in Action &mdash; Real Session Output</h2>
         <p class="example-lead">The prompt that started it:</p>
@@ -291,7 +496,42 @@ What I want the AI to help with:
       </figure>
     </section>
 
-    <section id="advanced" class="tab-panel" role="tabpanel" aria-labelledby="tab-advanced" hidden>
+<section id="faq" class="tab-panel" role="tabpanel" aria-labelledby="tab-faq" hidden>
+            <div class="section-heading">
+        <h2>Frequently Asked Questions</h2>
+        <p>Quick answers about what Prompt Compass does, how the files differ, and what to expect during install.</p>
+      </div>
+      <div class="card">
+        <h2>What is prompting / prompt engineering?</h2>
+        <p>Prompting is the practice of giving an AI clear instructions, context, examples, constraints, and success criteria. Prompt engineering is the more deliberate version: shaping those instructions so the model understands the task and produces a useful result.</p>
+      </div>
+      <div class="card">
+        <h2>What does Prompt Compass do? What is it for?</h2>
+        <p>Prompt Compass helps diagnose weak prompts, improve existing prompts, build new prompts from intent, compare prompt versions, and check whether a prompt is ready for the model or surface where it will run.</p>
+      </div>
+      <div class="card">
+        <h2>What is an MCP connector or extension?</h2>
+        <p>MCP means Model Context Protocol. In this context, Claude may call the local tool connection an MCP, connector, or extension. Prompt Compass's extension is the MCP connector: it gives Claude tools plus bundled prompt-engineering resources. <a href="https://jonathankhobson.github.io/what-is-an-mcp/">Learn more about MCPs.</a></p>
+      </div>
+      <div class="card">
+        <h2>What is the difference between the plugin, extension, and skill?</h2>
+        <p><strong>Plugin zip:</strong> the Claude Cowork or Claude Code bundle. It includes the MCP/extension and skill. <strong>Extension file:</strong> the Claude Desktop MCP connector, which gives Claude tools and bundled resources so it can do more with fewer tokens. <strong>Skill:</strong> the prompt-only alternative Claude can read without the MCP, though it may use more context. You can install more than one.</p>
+      </div>
+      <div class="card">
+        <h2>Does this work in Codex?</h2>
+        <p>Yes. Prompt Compass can work with Codex because Codex can use local MCPs, skills, and plugins. This page does not provide a one-click Codex install path; technical Codex users can use the source zip or the AI-assisted install prompt in Advanced.</p>
+      </div>
+      <div class="card">
+        <h2>Is Prompt Compass safe to install?</h2>
+        <p>Downloading anything from the internet carries real risk: malicious code, data collection, hidden scripts. Prompt Compass is designed to reduce that surface area: it runs locally on your machine, requires no API key, bundles its own files, and does no background scanning. That said, no third-party tool is zero risk. Before installing, you're encouraged to review the source files or have a trusted technical contact look them over. Claude's warning is the standard prompt it shows for all locally shared third-party plugins, not a flag specific to this tool. <a href="https://jonathankhobson.github.io/what-is-an-mcp/#mcp-risks">Learn more about MCP risks.</a></p>
+      </div>
+      <div class="card">
+        <h2>Do I need a GitHub account?</h2>
+        <p>No. The download buttons go directly to the files. GitHub is only where the files are hosted.</p>
+      </div>
+    </section>
+
+<section id="advanced" class="tab-panel" role="tabpanel" aria-labelledby="tab-advanced" hidden>
       <div class="card">
         <h2>Advanced</h2>
         <p>This section is for IT reviewers, security-conscious users, and anyone troubleshooting installation.</p>
@@ -458,6 +698,10 @@ Expected result:
   </main>
   <footer>
     <p>Prompt Compass is local-first by default: no provider key is required for the bundled prompt-engineering workflows.</p>
+      <div class="footer-author">
+      <p><strong>Jonathan Kyle Hobson</strong> &mdash; UX researcher, product strategist, and AI tool builder.</p>
+      <p><a href="https://www.linkedin.com/in/jonathankylehobson/" target="_blank" rel="noopener">Connect on LinkedIn</a> &middot; <a href="#about">About this project</a></p>
+    </div>
   </footer>
   <script>
     const tabButtons = Array.from(document.querySelectorAll("[data-tab-target]"));

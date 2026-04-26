@@ -50,6 +50,12 @@
     .author-photo { width: 96px; height: 96px; object-fit: cover; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
     .section-heading { padding: 6px 0 12px; }
     .section-heading h2 { margin-bottom: 4px; }
+    .example-lead { font-size: 1.04rem; color: var(--muted); max-width: 780px; }
+    .example-quote { margin: 12px 0 16px; padding: 14px 16px; border-left: 4px solid var(--coral); background: #fff7f4; border-radius: 8px; color: var(--ink); }
+    .example-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; }
+    .example-output { margin: 0 0 18px; }
+    .example-output-image { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+    .example-caption { margin-top: 8px; color: var(--muted); font-size: .92rem; }
     footer { padding: 28px 0 44px; color: var(--muted); }
     .notice { border-left: 4px solid var(--gold); }
     @media (max-width: 640px) { .author-card { grid-template-columns: 1fr; } .author-photo { width: 84px; height: 84px; } }
@@ -248,10 +254,41 @@ What I want the AI to help with:
     </section>
 
     <section id="example" class="tab-panel" role="tabpanel" aria-labelledby="tab-example" hidden>
-      <div class="card notice">
-        <h2>Prompt Examples Are Being Prepared</h2>
-        <p>Public before-and-after prompt examples will be added after sanitized conversation examples are ready. This release intentionally does not ship unready examples or fake downloads.</p>
+      <div class="card">
+        <h2>Prompt Compass in Action &mdash; Real Session Output</h2>
+        <p class="example-lead">The prompt that started it:</p>
+        <blockquote class="example-quote">&ldquo;like, um, going forward, we create a protocol to separate any of the personal overlay space from, like, my personal prompt compass MCP is stored in it...&rdquo;</blockquote>
+        <p>A voice memo. No structure. Misspelled tool names. Five deferred decisions tangled with three urgent ones. The kind of thing you dictate at 11pm when the idea is flowing but the words aren't cooperating.</p>
+        <p><strong>What Prompt Compass did:</strong> It didn't just clean up the grammar. It diagnosed the prompt first &mdash; spotted three active anti-patterns (hallucination-bait, scope sprawl, missing success test), named the pattern (Voice Memo / Dictation Intake), then asked three targeted questions before writing a single word of the improved version.</p>
+        <p>The third question is where it got interesting. Asked what the single most important behavior should be, the answer completely reversed the original intent &mdash; from &ldquo;write notes at session end&rdquo; to &ldquo;write immediately when a durable event occurs, because session end is a fiction for how I actually work.&rdquo; That pivot couldn't have been inferred. It required a human in the loop.</p>
+        <p>The output: a clean two-variant memory policy &mdash; one terse version for lean AI profiles, one full version for rich project instructions &mdash; with named tool calls, a floor/ceiling authority model, and a success test a developer could hand to a collaborator cold.</p>
+        <p><strong>RACCCA score lifted from 21 to 26. Three anti-patterns resolved. One policy that will govern how two AI systems handle memory for the foreseeable future.</strong></p>
+        <p>That's what Prompt Compass is for.</p>
       </div>
+      <div class="card">
+        <h2>Before / After Teaching Artifact</h2>
+        <p>This curated artifact shows the transformation in a tighter teaching format: raw dictation on one side, Prompt Compass's improved prompt structure on the other, and the human-in-the-loop decisions that changed the final output.</p>
+        <div class="example-actions">
+          <a class="button" href="examples/prompt-compass-before-after-infographic.html" target="_blank" rel="noopener">Open interactive example</a>
+          <a class="button ghost" href="https://claude.ai/share/929cc039-cd45-4ae6-9039-51c398b4c515" target="_blank" rel="noopener">View full shared conversation</a>
+        </div>
+      </div>
+      <figure class="example-output">
+        <img class="example-output-image" src="examples/prompt-compass-before-after-snapshot.png" alt="Stitched before-and-after screenshot showing Prompt Compass turning a raw voice memo into an improved prompt" loading="lazy">
+        <figcaption class="example-caption">Curated before/after artifact, stitched from screenshots 0-1 and 0-2.</figcaption>
+      </figure>
+      <div class="card">
+        <h2>Real Claude Conversation Sample</h2>
+        <p>This snapshot is taken from the real shared Claude conversation. It shows Prompt Compass operating across the actual loop: rough prompt, anti-pattern diagnosis, advanced questions, improved prompt, and change rationale.</p>
+        <p>The full conversation is available for people who want to inspect more examples and iterations, but the preview below is the intended first look.</p>
+        <div class="example-actions">
+          <a class="button secondary" href="https://claude.ai/share/929cc039-cd45-4ae6-9039-51c398b4c515" target="_blank" rel="noopener">Open full shared conversation</a>
+        </div>
+      </div>
+      <figure class="example-output">
+        <img class="example-output-image" src="examples/prompt-compass-real-session-snapshot.png" alt="Stitched screenshot sample from a real Claude conversation using Prompt Compass advanced improve mode" loading="lazy">
+        <figcaption class="example-caption">Real conversation sample, stitched from screenshots 1 through 9.</figcaption>
+      </figure>
     </section>
 
     <section id="advanced" class="tab-panel" role="tabpanel" aria-labelledby="tab-advanced" hidden>
@@ -267,10 +304,10 @@ What I want the AI to help with:
         <details>
           <summary>Advanced: Verify Download</summary>
           <p>These SHA-256 checksums help technical reviewers confirm that downloaded files match this release.</p>
-          <table><tr><td><code>checksums.txt</code></td><td><code>459852ee3cc9dcaec7a75b1607a6dc15b11d51fe221ecd14b2df9f3db646c7d5</code></td></tr>
-<tr><td><code>prompt-compass-0.1.0.mcpb</code></td><td><code>ad1d20b642afb253080fa6b7587f1290b40bec37cf32b8d41754f20c724b5757</code></td></tr>
-<tr><td><code>prompt-compass-plugin.zip</code></td><td><code>805598a6823e2207ce9d38cc1c6598e561726777ba51a7e9d5e6d0fe93dacea1</code></td></tr>
-<tr><td><code>prompt-compass-source.zip</code></td><td><code>b11b655243d1a2466bbb963bfd7e3faa6dd165180a6bf38c21c9cdd70df1bd83</code></td></tr>
+          <table><tr><td><code>checksums.txt</code></td><td><code>310d0fed3847a7d4e6c297ddd7f592039624698b462cf4aeab8939168171799f</code></td></tr>
+<tr><td><code>prompt-compass-0.1.0.mcpb</code></td><td><code>6a4b24e4f62748b7a3fdaacaf2b71c5488f94469c4bb4131d0978c8c983075ba</code></td></tr>
+<tr><td><code>prompt-compass-plugin.zip</code></td><td><code>706e00f0aeb1f8a0d6cae6b429d20473ba9905d715503f1eaa0616430dbf07fd</code></td></tr>
+<tr><td><code>prompt-compass-source.zip</code></td><td><code>753486db53948378660791492c262a2726c56b96e2ef35e9d4c5bb37cc6aabc1</code></td></tr>
 <tr><td><code>prompt-compass.skill</code></td><td><code>77911d338373cc0d3637a3ff07b5fbb72ae81e12449a4b69c76d1c543ce30608</code></td></tr>
 <tr><td><code>skill.zip</code></td><td><code>460ef16327ede26813416b3ac412cf316584807731705401b047c80b44344645</code></td></tr></table>
         </details>

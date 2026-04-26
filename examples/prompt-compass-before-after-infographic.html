@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prompt Compass in Action - Before and After Example</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17211f;
+      --muted: #54615e;
+      --paper: #f8fbf9;
+      --line: #cbd8d3;
+      --teal: #0f766e;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: radial-gradient(circle at top left, #e8f4f0, transparent 32rem), var(--paper); color: var(--ink); line-height: 1.55; }
+    .artifact-topbar, .artifact-shell, .artifact-footer { width: min(1220px, calc(100% - 32px)); margin: 0 auto; }
+    .artifact-topbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.75rem; padding: 1.1rem 0; }
+    .artifact-brand { color: var(--muted); font-weight: 750; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.78rem; }
+    .artifact-link { display: inline-block; padding: 0.62rem 0.85rem; border: 1px solid var(--line); border-radius: 999px; background: #ffffff; color: var(--teal); text-decoration: none; font-weight: 750; }
+    .artifact-shell { padding: 0.5rem 0 2.25rem; }
+    .artifact-footer { border-top: 1px solid var(--line); padding: 1.25rem 0 2rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <nav class="artifact-topbar" aria-label="Example navigation">
+    <span class="artifact-brand">Prompt Compass example</span>
+    <span>
+      <a class="artifact-link" href="https://jonathankhobson.github.io/prompt-compass/">Back to Prompt Compass</a>
+      <a class="artifact-link" href="https://claude.ai/share/929cc039-cd45-4ae6-9039-51c398b4c515" target="_blank" rel="noopener">View full shared conversation</a>
+    </span>
+  </nav>
+  <main class="artifact-shell">
+<h2 class="sr-only">Prompt Compass in action: before and after prompt improvement from a real session</h2>
+
+<style>
+  .pc-wrap { font-family: var(--font-sans); max-width: 680px; padding: 1.5rem 0; }
+  .pc-header { text-align: center; margin-bottom: 2rem; }
+  .pc-badge { display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); color: var(--color-text-secondary); margin-bottom: 0.75rem; }
+  .pc-title { font-size: 20px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 0.25rem; }
+  .pc-subtitle { font-size: 13px; color: var(--color-text-secondary); margin: 0; }
+
+  .pc-columns { display: grid; grid-template-columns: 1fr 48px 1fr; gap: 0; align-items: start; }
+  .pc-arrow-col { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 2.5rem; }
+  .pc-arrow-icon { font-size: 24px; color: var(--color-text-secondary); line-height: 1; }
+  .pc-pattern-badge { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #0C447C; background: #E6F1FB; padding: 3px 8px; border-radius: 100px; margin-top: 6px; text-align: center; line-height: 1.4; }
+
+  .pc-card { border-radius: var(--border-radius-lg); border: 0.5px solid var(--color-border-tertiary); background: var(--color-background-primary); overflow: visible; position: relative; }
+  .pc-card-header { padding: 10px 14px 8px; border-bottom: 0.5px solid var(--color-border-tertiary); display: flex; align-items: center; gap: 8px; }
+  .pc-card-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .pc-card-label { font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
+  .pc-card-body { padding: 14px; }
+
+  .before-card .pc-card-header { background: #FCEBEB; }
+  .before-card .pc-card-dot { background: #E24B4A; }
+  .before-card .pc-card-label { color: #A32D2D; }
+  .after-card .pc-card-header { background: #EAF3DE; }
+  .after-card .pc-card-dot { background: #639922; }
+  .after-card .pc-card-label { color: #3B6D11; }
+
+  .pc-prompt-text { font-family: var(--font-mono); font-size: 11.5px; line-height: 1.65; color: var(--color-text-primary); white-space: pre-wrap; word-break: break-word; }
+
+  .pc-annotation-wrap { position: relative; margin-bottom: 6px; }
+  .pc-annotated { border-radius: 4px; padding: 2px 4px; margin: 1px 0; display: inline; line-height: 1.8; }
+  .bad { background: #FAECE7; color: #993C1D; border-bottom: 1.5px solid #D85A30; }
+  .good { background: #EAF3DE; color: #3B6D11; border-bottom: 1.5px solid #639922; }
+  .neutral { background: var(--color-background-secondary); }
+
+  .pc-callout { display: flex; align-items: flex-start; gap: 7px; margin: 8px 0 4px; padding: 7px 10px; border-radius: 6px; font-size: 11.5px; line-height: 1.5; }
+  .callout-bad { background: #FAECE7; border-left: 2px solid #D85A30; }
+  .callout-bad .callout-icon { color: #D85A30; font-size: 13px; margin-top: 1px; }
+  .callout-bad .callout-text { color: #993C1D; }
+  .callout-good { background: #EAF3DE; border-left: 2px solid #639922; }
+  .callout-good .callout-icon { color: #639922; font-size: 13px; margin-top: 1px; }
+  .callout-good .callout-text { color: #27500A; }
+  .callout-info { background: #E6F1FB; border-left: 2px solid #378ADD; }
+  .callout-info .callout-icon { color: #378ADD; font-size: 13px; margin-top: 1px; }
+  .callout-info .callout-text { color: #0C447C; }
+
+  .pc-divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 2rem 0; }
+
+  .pc-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 1.5rem 0 0.5rem; }
+  .pc-stat { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 10px 12px; text-align: center; }
+  .pc-stat-val { font-size: 22px; font-weight: 500; color: var(--color-text-primary); display: block; }
+  .pc-stat-label { font-size: 11px; color: var(--color-text-secondary); margin-top: 2px; display: block; }
+
+  .pc-steps { margin: 1rem 0 0; }
+  .pc-step { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 10px; }
+  .pc-step-num { width: 22px; height: 22px; border-radius: 50%; background: var(--color-background-info); color: #0C447C; font-size: 11px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .pc-step-text { font-size: 12.5px; color: var(--color-text-secondary); line-height: 1.55; }
+  .pc-step-text strong { color: var(--color-text-primary); font-weight: 500; }
+
+  .pc-footer { text-align: center; margin-top: 1.5rem; }
+  .pc-footer-text { font-size: 12px; color: var(--color-text-secondary); }
+  .pc-try-btn { margin-top: 10px; font-size: 13px; padding: 7px 18px; cursor: pointer; }
+
+  @media (max-width: 540px) {
+    .pc-columns { grid-template-columns: 1fr; }
+    .pc-arrow-col { flex-direction: row; justify-content: center; padding: 0.5rem 0; }
+    .pc-stats { grid-template-columns: 1fr 1fr; }
+  }
+
+  :root {
+    --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    --color-background-primary: #ffffff;
+    --color-background-secondary: #f4f3ee;
+    --color-background-info: #d9ebff;
+    --color-border-tertiary: #d8d7cf;
+    --color-text-primary: #171717;
+    --color-text-secondary: #3f3f3a;
+    --border-radius-md: 10px;
+    --border-radius-lg: 16px;
+  }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  .pc-wrap { width: min(1180px, 100%); max-width: none !important; margin: 0 auto; padding: 2rem 0 3rem !important; }
+  .pc-title { font-size: clamp(1.65rem, 3vw, 2.4rem) !important; font-weight: 750 !important; letter-spacing: -0.03em; }
+  .pc-subtitle { font-size: clamp(1rem, 2vw, 1.2rem) !important; }
+  .pc-columns { grid-template-columns: minmax(0, 1fr) 80px minmax(0, 1fr) !important; gap: 20px !important; }
+  .pc-card { box-shadow: 0 18px 48px rgba(23, 33, 31, 0.08); }
+  .pc-card-body { padding: clamp(1rem, 2vw, 1.45rem) !important; }
+  .pc-prompt-text { font-size: clamp(0.86rem, 1.25vw, 1.05rem) !important; }
+  .pc-callout { border-radius: 12px !important; font-size: clamp(0.88rem, 1.15vw, 1rem) !important; padding: 0.82rem 1rem !important; }
+  .pc-footer { display: grid; place-items: center; gap: 0.65rem; }
+  .pc-try-btn { display: inline-block; margin-top: 0.25rem; padding: 0.75rem 1rem; border: 1px solid #0f766e; border-radius: 999px; background: #0f766e; color: #ffffff; text-decoration: none; font-weight: 750; }
+  @media (max-width: 760px) {
+    .pc-columns { grid-template-columns: 1fr !important; }
+    .pc-arrow-col { flex-direction: row !important; justify-content: center; padding: 0.5rem 0 !important; }
+    .pc-stats { grid-template-columns: 1fr !important; }
+  }
+
+</style>
+
+<div class="pc-wrap">
+  <div class="pc-header">
+    <div class="pc-badge">Prompt Compass in action</div>
+    <p class="pc-title">Real session · Advanced mode · Human in the loop</p>
+    <p class="pc-subtitle">How a voice-memo brain dump became a production-ready AI memory policy</p>
+  </div>
+
+  <div class="pc-columns">
+
+    <div class="pc-card before-card">
+      <div class="pc-card-header">
+        <div class="pc-card-dot"></div>
+        <span class="pc-card-label">Before · Raw voice memo</span>
+      </div>
+      <div class="pc-card-body">
+        <div class="pc-annotation-wrap">
+          <div class="pc-prompt-text"><span class="pc-annotated bad">like, um, going forward, we create a protocol</span> to separate any of the personal overlay space <span class="pc-annotated bad">from, like, my personal prompt compass MCP</span> is stored in it, the writeables that <span class="pc-annotated bad">cloud</span> can write to, away from the rest of the MCPs, <span class="pc-annotated bad">so that that way</span> everybody who downloads it gets a blank slate with no personalization yet...</div>
+        </div>
+        <div class="pc-callout callout-bad">
+          <span class="callout-icon">✕</span>
+          <span class="callout-text">Filler words, doubled phrases, misspelled tool names — model has to guess intent</span>
+        </div>
+        <div class="pc-callout callout-bad">
+          <span class="callout-icon">✕</span>
+          <span class="callout-text">No role defined — model doesn't know what posture to take</span>
+        </div>
+        <div class="pc-callout callout-bad">
+          <span class="callout-icon">✕</span>
+          <span class="callout-text">No output contract — what should be produced? A doc? A checklist? A plan?</span>
+        </div>
+        <div class="pc-callout callout-bad">
+          <span class="callout-icon">✕</span>
+          <span class="callout-text">Deferred items tangled with must-haves — model can't tell what to do now vs. later</span>
+        </div>
+        <div class="pc-callout callout-bad">
+          <span class="callout-icon">✕</span>
+          <span class="callout-text">Pattern: Voice Memo / Dictation Intake · Anti-patterns: hallucination-bait, scope sprawl, missing success test</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc-arrow-col">
+      <div class="pc-arrow-icon">→</div>
+      <div class="pc-pattern-badge">3 Q&amp;A<br>stages</div>
+    </div>
+
+    <div class="pc-card after-card">
+      <div class="pc-card-header">
+        <div class="pc-card-dot"></div>
+        <span class="pc-card-label">After · Prompt Compass improved</span>
+      </div>
+      <div class="pc-card-body">
+        <div class="pc-prompt-text"><span class="pc-annotated good">Role: Technical packaging assistant</span>
+
+<span class="pc-annotated good">Objective:</span> Sequenced packaging checklist for shipping Prompt Compass as a distributable product.
+
+<span class="pc-annotated good">Must-haves (in order):</span>
+<span class="pc-annotated good">1. Clone + sanity check</span> — confirm personal overlay and prompt library are cleared.
+<span class="pc-annotated good">2. .MCPB packaging</span> — bundle MCP into .mcpb file.
+<span class="pc-annotated good">3. Raw zip packaging</span> — note file exclusions.
+<span class="pc-annotated good">4. agents.md file</span> — define structure.
+
+<span class="pc-annotated good">Exclusions:</span> Skill (deferred). Plugin (deferred).
+
+<span class="pc-annotated good">Output Contract:</span> Numbered checklist. Flag deferred items [DEFERRED]. Success test: a dev could hand this to a collaborator and they'd know exactly what to do.</div>
+        <div class="pc-callout callout-good">
+          <span class="callout-icon">✓</span>
+          <span class="callout-text">Role anchor — model knows exactly what posture to take</span>
+        </div>
+        <div class="pc-callout callout-good">
+          <span class="callout-icon">✓</span>
+          <span class="callout-text">Priority ordering extracted from the stream-of-consciousness — 4 deliverables, numbered</span>
+        </div>
+        <div class="pc-callout callout-good">
+          <span class="callout-icon">✓</span>
+          <span class="callout-text">Deferred items explicitly flagged [DEFERRED] — model skips them cleanly</span>
+        </div>
+        <div class="pc-callout callout-good">
+          <span class="callout-icon">✓</span>
+          <span class="callout-text">Output contract with success test — model knows when "done" is done</span>
+        </div>
+        <div class="pc-callout callout-info">
+          <span class="callout-icon">↑</span>
+          <span class="callout-text">RACCCA score: 21 → 26 · All 3 anti-patterns resolved</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="pc-divider">
+
+  <div style="background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-bottom: 1.5rem;">
+    <p style="font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-text-secondary); margin: 0 0 0.75rem;">What happened in the middle — the HITL loop</p>
+    <div class="pc-steps">
+      <div class="pc-step">
+        <div class="pc-step-num">1</div>
+        <div class="pc-step-text"><strong>Prompt Compass detected the pattern</strong> — Voice Memo / Dictation Intake. Diagnosed 3 anti-patterns before rewriting anything.</div>
+      </div>
+      <div class="pc-step">
+        <div class="pc-step-num">2</div>
+        <div class="pc-step-text"><strong>Stage 1 — Intent &amp; contract.</strong> Asked: who is the audience? Kyle answered: "All of the above — Claude, Codex, developers, Kyle directly." This changed the depth and tone of the output contract.</div>
+      </div>
+      <div class="pc-step">
+        <div class="pc-step-num">3</div>
+        <div class="pc-step-text"><strong>Kyle pivoted the objective mid-loop.</strong> Original brief said "write at session end." Kyle answered: "I jump between conversations all the time — session end is meaningless." Prompt Compass rewrote the core policy around event-based writing instead. This could not have been inferred from the original prompt.</div>
+      </div>
+      <div class="pc-step">
+        <div class="pc-step-num">4</div>
+        <div class="pc-step-text"><strong>Stage 2 — Context grounding.</strong> MCP tool names named explicitly. Floor/ceiling authority model locked in. Codex's critique incorporated. Two output variants produced: terse and full.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pc-stats">
+    <div class="pc-stat">
+      <span class="pc-stat-val">+5</span>
+      <span class="pc-stat-label">RACCCA score lift</span>
+    </div>
+    <div class="pc-stat">
+      <span class="pc-stat-val">3</span>
+      <span class="pc-stat-label">anti-patterns resolved</span>
+    </div>
+    <div class="pc-stat">
+      <span class="pc-stat-val">3</span>
+      <span class="pc-stat-label">HITL questions asked</span>
+    </div>
+  </div>
+
+  <div class="pc-footer">
+    <p class="pc-footer-text">From this actual session · Advanced mode · No agents · Human in the loop</p>
+    <a class="pc-try-btn" href="https://jonathankhobson.github.io/prompt-compass/">Back to Prompt Compass downloads</a>
+  </div>
+</div>
+  </main>
+  <footer class="artifact-footer">
+    <p>This public artifact is adapted from a real Prompt Compass advanced-mode session and prepared as a standalone teaching example.</p>
+  </footer>
+</body>
+</html>

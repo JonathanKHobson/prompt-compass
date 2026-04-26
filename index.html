@@ -182,12 +182,16 @@ What I want the AI to help with:
     <section id="about" class="tab-panel" role="tabpanel" aria-labelledby="tab-about" hidden>
       <div class="card">
         <h2>What Is Prompt Compass?</h2>
-        <p>[PLACEHOLDER &mdash; OVERVIEW COPY: plain-language explanation of what the MCP is and does, slightly more in-depth than what other tabs say. Primary audience: non-technical. Secondary audience: technical. Do not write filler prose &mdash; leave this placeholder intact.]</p>
+        <p>Prompt Compass is a local prompt-engineering assistant that helps turn rough AI instructions into prompts that are clearer, safer, and easier for a model to follow. It is built for the moment when you know what you want from an AI, but the prompt is messy, incomplete, too broad, or missing the details that would make the output reliable.</p>
+        <p>Instead of only rewriting the wording, Prompt Compass looks at the structure underneath the request: the goal, audience, context, constraints, role framing, output format, model target, and success test. It can diagnose what is weak, ask targeted clarifying questions, build a prompt from scratch, compare versions, preflight a prompt before use, and adapt instructions for different AI models or tool surfaces.</p>
+        <p>For non-technical users, it works like a guided editor for AI instructions. For technical users, it provides a structured local tool surface for routing, prompt repair, model targeting, personal prompt libraries, and repeatable prompt-quality checks.</p>
       </div>
 
       <div class="card">
         <h2>How It's Built</h2>
-        <p>[PLACEHOLDER &mdash; TECHNICAL SUMMARY: high-level description of what the MCP contains and how it's structured. Light technical depth &mdash; not deep dev detail. Do not write filler prose &mdash; leave this placeholder intact.]</p>
+        <p>Prompt Compass is distributed as a local MCP/extension, a Claude Cowork or Claude Code plugin, and a prompt-only skill. The MCP exposes tools that a host AI can call for routing, prompt analysis, diagnosis, rewriting, prompt building, preflight checks, comparison, model targeting, and personal prompt storage.</p>
+        <p>Under the hood, it combines a curated prompt-engineering knowledge base with deterministic workflow tools. The knowledge base includes frameworks, strategies, patterns, anti-patterns, techniques, terms, model profiles, templates, and examples. The workflow layer uses that material to return structured results instead of relying on the host model to improvise every step.</p>
+        <p>Prompt Compass also includes a personal overlay and prompt library so users can save their own methods, preferences, templates, and examples without changing the shared core. It runs locally and does not require a provider API key for the bundled prompt-engineering workflows.</p>
       </div>
 
       <div class="card">
@@ -405,7 +409,9 @@ What I want the AI to help with:
 
       <div class="card">
         <h2>How I Use It</h2>
-        <p>[PLACEHOLDER &mdash; AUTHOR WILL COMPLETE: personal usage patterns, prompting strategies, and observed model-specific behaviors with Claude and Codex. Do not write filler prose &mdash; leave intact.]</p>
+        <p>I use Prompt Compass when an idea is valuable but the instruction is still too messy for an AI to execute well. That might be a voice memo, a rough feature request, a draft prompt, a planning note, or a long context dump where the real ask is buried in the middle.</p>
+        <p>For fast work, I use quick improve mode to tighten the prompt and add the missing output contract. For important work, I use guided mode so the AI has to ask clarifying questions before rewriting. That human-in-the-loop step is often where the prompt gets meaningfully better, because it surfaces decisions the model could not safely infer on its own.</p>
+        <p>I use Prompt Compass most with Claude and Codex. With Claude, it helps turn fuzzy intent into better conversational instructions. With Codex, it helps turn broad implementation ideas into clearer developer-facing specs, acceptance criteria, and execution constraints.</p>
       </div>
     </section>
 

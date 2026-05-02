@@ -235,14 +235,16 @@
 
       <div class="card">
         <h2>Pick Your Path</h2>
-        <p>Want your AI assistant to help install this? <a href="#ai-install-prompt">Use the AI-assisted install prompt.</a></p>
+        <p>Downloads are live for beta.3. Choose the plugin for Claude Cowork or Claude Code, the MCPB/Desktop Extension for Claude Desktop, or the standalone skill when tool access is unavailable.</p>
         <table>
-          <tr><td><strong>I use Claude Cowork or Claude Code</strong></td><td>Download <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.3/prompt-compass-plugin.zip" download><code>prompt-compass-plugin.zip</code></a></td></tr>
-          <tr><td><strong>I use Claude Desktop</strong></td><td>Download the MCP connector <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.3/prompt-compass-0.1.0.mcpb" download><code>prompt-compass-0.1.0.mcpb</code></a></td></tr>
-          <tr><td><strong>I want the skill / prompt-only version</strong></td><td>Download <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.3/prompt-compass.skill" download><code>prompt-compass.skill</code></a> or <a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.3/skill.zip" download><code>skill.zip</code></a></td></tr>
+          <tr><td><strong>I want a quick prompt fix</strong></td><td>Use the quick prompt fix prompt to repair a draft prompt without turning it into a full workshop.</td></tr>
+          <tr><td><strong>I want guided improvement</strong></td><td>Use guided improve when the prompt matters and the AI should ask bounded questions before rewriting.</td></tr>
+          <tr><td><strong>I need to build from scratch</strong></td><td>Use build from scratch when you know the outcome but need help shaping role, context, constraints, and output format.</td></tr>
+          <tr><td><strong>I want to compare or preflight</strong></td><td>Use compare or preflight flows when you need to test versions, catch missing requirements, or check readiness before using a prompt.</td></tr>
+          <tr><td><strong>I need model or surface targeting</strong></td><td>Use model/surface targeting when the prompt needs to work differently in Claude, Codex, ChatGPT, tool use, or structured-output workflows.</td></tr>
         </table>
-        <p><strong>You can install more than one.</strong> Start with the row that matches how you use Claude. The skill can also be installed alongside the plugin or extension when you want the prompt-only version available too.</p>
-        <p>Using Codex? See the FAQ tab for technical-user guidance.</p>
+        <p><strong>You can install more than one.</strong> Start with the plugin, extension, or skill that matches your Claude surface, then use the path above to decide what to do after install.</p>
+        <p>Want your AI assistant to help install this? <a href="#ai-install-prompt">Use the AI-assisted install prompt.</a> Using Codex? See the FAQ tab for technical-user guidance.</p>
       </div>
 
       <div class="card">
@@ -280,17 +282,6 @@ What I want the AI to help with:
 [Describe the task here]</textarea>
         </div>
       </section>
-    
-
-<div class="card author-card">
-        <img class="author-photo" src="assets/jonathan-kyle-hobson.png" alt="Jonathan Kyle Hobson">
-        <div>
-          <h2>About the author</h2>
-          <p><strong>Jonathan Kyle Hobson</strong> is a UX researcher, product strategist, and AI tool builder with 10+ years of experience across design, storytelling, and emerging technology. He holds a master's degree in User Experience from Arizona State University. Kyle created Prompt Compass to make prompt engineering more concrete, testable, and useful for people who need AI instructions to work reliably.</p>
-          <p><a href="https://www.linkedin.com/in/jonathankylehobson/" target="_blank" rel="noopener">Connect on LinkedIn</a></p>
-        </div>
-      </div>
-      <p class="about-link"><a href="#about">Read more about this project &rarr;</a></p>
     </section>
 
     <section id="about" class="tab-panel" role="tabpanel" aria-labelledby="tab-about" hidden>
@@ -310,215 +301,8 @@ What I want the AI to help with:
 
       <div class="card">
         <h2>What's Inside</h2>
-        <p>Every tool this MCP exposes &mdash; what it does and how to call it.</p>
-
-      <dl class="tool-breakdown">
-        <dt><code>prompt_compass_overview</code></dt>
-        <dd>
-          <p>High-level map of what Prompt Compass can do and how to navigate it.</p>
-          <p><strong>Say:</strong> &ldquo;Give me an overview of Prompt Compass.&rdquo;</p>
-        </dd>
-        <dt><code>get_started</code></dt>
-        <dd>
-          <p>First-session guide: routes new users to the right workflow in under five minutes.</p>
-          <p><strong>Say:</strong> &ldquo;I'm new — help me get started with Prompt Compass.&rdquo;</p>
-        </dd>
-        <dt><code>list_tool_surface</code></dt>
-        <dd>
-          <p>Complete inventory of every available tool, grouped by role.</p>
-          <p><strong>Say:</strong> &ldquo;List all Prompt Compass tools.&rdquo;</p>
-        </dd>
-        <dt><code>list_catalog_categories</code></dt>
-        <dd>
-          <p>Shows what kinds of records exist (frameworks, strategies, patterns, terms, etc.).</p>
-          <p><strong>Say:</strong> &ldquo;What categories does Prompt Compass cover?&rdquo;</p>
-        </dd>
-        <dt><code>route_prompt_request</code></dt>
-        <dd>
-          <p>Routes a raw user request to the correct workflow before any deep tool use begins.</p>
-          <p><strong>Say:</strong> &ldquo;Use Prompt Compass&rdquo;</p>
-        </dd>
-        <dt><code>analyze_prompt</code></dt>
-        <dd>
-          <p>Scores an existing prompt and identifies what's weak, missing, or risky.</p>
-          <p><strong>Say:</strong> &ldquo;Analyze this prompt and tell me what's wrong.&rdquo;</p>
-        </dd>
-        <dt><code>diagnose_prompt</code></dt>
-        <dd>
-          <p>Deeper diagnosis with evidence, repair priority, and rewrite readiness — without rewriting.</p>
-          <p><strong>Say:</strong> &ldquo;Diagnose this prompt before I rewrite it.&rdquo;</p>
-        </dd>
-        <dt><code>preflight_prompt</code></dt>
-        <dd>
-          <p>Checks whether a prompt is ready for a specific model or execution surface before running it.</p>
-          <p><strong>Say:</strong> &ldquo;Preflight this prompt for [model/surface].&rdquo;</p>
-        </dd>
-        <dt><code>improve_prompt</code></dt>
-        <dd>
-          <p>Rewrites an existing prompt in quick mode, guided advanced mode, or Agent Mode committee.</p>
-          <p><strong>Say:</strong> &ldquo;Improve this prompt&rdquo;</p>
-        </dd>
-        <dt><code>compare_prompts</code></dt>
-        <dd>
-          <p>Diffs two prompt versions and reports measurable improvements, regressions, and remaining risks.</p>
-          <p><strong>Say:</strong> &ldquo;Compare these two prompts — which is better?&rdquo;</p>
-        </dd>
-        <dt><code>build_prompt</code></dt>
-        <dd>
-          <p>Scaffolds a new prompt from intent when starting from scratch.</p>
-          <p><strong>Say:</strong> &ldquo;Help me build a prompt from scratch for [task].&rdquo;</p>
-        </dd>
-        <dt><code>search_prompt_patterns</code></dt>
-        <dd>
-          <p>Open-ended search across frameworks, strategies, patterns, anti-patterns, techniques, and terms.</p>
-          <p><strong>Say:</strong> &ldquo;Search for prompting techniques related to [topic].&rdquo;</p>
-        </dd>
-        <dt><code>get_framework</code></dt>
-        <dd>
-          <p>Returns the full record for a named prompt framework (template, examples, use notes).</p>
-          <p><strong>Say:</strong> &ldquo;Show me the RISEN framework.&rdquo;</p>
-        </dd>
-        <dt><code>get_pattern</code></dt>
-        <dd>
-          <p>Returns the full record for a named prompt pattern or anti-pattern.</p>
-          <p><strong>Say:</strong> &ldquo;What is the Scope Sprawl anti-pattern?&rdquo;</p>
-        </dd>
-        <dt><code>get_record</code></dt>
-        <dd>
-          <p>Generic named resolver — looks up any Prompt Compass record by name.</p>
-          <p><strong>Say:</strong> &ldquo;Look up [record name] in Prompt Compass.&rdquo;</p>
-        </dd>
-        <dt><code>get_technique</code></dt>
-        <dd>
-          <p>Returns a specific prompt-engineering technique (e.g., self-critique, role-playing).</p>
-          <p><strong>Say:</strong> &ldquo;Explain the chain-of-thought technique.&rdquo;</p>
-        </dd>
-        <dt><code>get_term</code></dt>
-        <dd>
-          <p>Returns a concept definition from the Prompt Compass vocabulary.</p>
-          <p><strong>Say:</strong> &ldquo;Define 'output contract' in prompting terms.&rdquo;</p>
-        </dd>
-        <dt><code>list_frameworks</code></dt>
-        <dd>
-          <p>Browsable snapshot of available frameworks.</p>
-          <p><strong>Say:</strong> &ldquo;List the prompt frameworks in Prompt Compass.&rdquo;</p>
-        </dd>
-        <dt><code>list_strategies</code></dt>
-        <dd>
-          <p>Browsable snapshot of available strategies.</p>
-          <p><strong>Say:</strong> &ldquo;What prompting strategies are available?&rdquo;</p>
-        </dd>
-        <dt><code>list_patterns</code></dt>
-        <dd>
-          <p>Browsable snapshot of structural prompt patterns.</p>
-          <p><strong>Say:</strong> &ldquo;Show me examples of prompt patterns.&rdquo;</p>
-        </dd>
-        <dt><code>list_techniques</code></dt>
-        <dd>
-          <p>Browsable snapshot of single-move tactical techniques.</p>
-          <p><strong>Say:</strong> &ldquo;List prompt techniques I can apply.&rdquo;</p>
-        </dd>
-        <dt><code>list_terms</code></dt>
-        <dd>
-          <p>Browsable vocabulary and concept definitions.</p>
-          <p><strong>Say:</strong> &ldquo;Show me prompting terms and definitions.&rdquo;</p>
-        </dd>
-        <dt><code>list_prompt_templates</code></dt>
-        <dd>
-          <p>Copyable prompt scaffolds from the knowledge base and personal library.</p>
-          <p><strong>Say:</strong> &ldquo;Show me prompt templates I can start from.&rdquo;</p>
-        </dd>
-        <dt><code>list_prompt_examples</code></dt>
-        <dd>
-          <p>Concrete before/after-style reference prompts.</p>
-          <p><strong>Say:</strong> &ldquo;Show me example prompts.&rdquo;</p>
-        </dd>
-        <dt><code>list_anti_patterns</code></dt>
-        <dd>
-          <p>Browsable list of prompt anti-patterns with symptoms, severity, and fixes.</p>
-          <p><strong>Say:</strong> &ldquo;What prompt anti-patterns should I avoid?&rdquo;</p>
-        </dd>
-        <dt><code>get_clarifying_questions</code></dt>
-        <dd>
-          <p>Returns 3–5 targeted questions to fill missing slots in a prompt before rewriting.</p>
-          <p><strong>Say:</strong> &ldquo;Ask me clarifying questions about this prompt.&rdquo;</p>
-        </dd>
-        <dt><code>suggest_strategies</code></dt>
-        <dd>
-          <p>Ranks the best-fitting strategies for a diagnosed prompt shape and model target.</p>
-          <p><strong>Say:</strong> &ldquo;What strategies should I use for this type of prompt?&rdquo;</p>
-        </dd>
-        <dt><code>target_prompt_to_model</code></dt>
-        <dd>
-          <p>Adapts an existing prompt to a specific supported model (Claude, Codex, GPT-4, etc.).</p>
-          <p><strong>Say:</strong> &ldquo;Adapt this prompt for [model name].&rdquo;</p>
-        </dd>
-        <dt><code>target_prompt_to_surface</code></dt>
-        <dd>
-          <p>Adapts a prompt for a specific execution surface (parser, retrieval system, tool workflow).</p>
-          <p><strong>Say:</strong> &ldquo;Adapt this prompt for a tool-workflow surface.&rdquo;</p>
-        </dd>
-        <dt><code>get_model_profile</code></dt>
-        <dd>
-          <p>Returns prompting preferences and known quirks for a target model.</p>
-          <p><strong>Say:</strong> &ldquo;What should I know about prompting [model name]?&rdquo;</p>
-        </dd>
-        <dt><code>save_personal_record</code></dt>
-        <dd>
-          <p>Saves a custom framework, strategy, pattern, technique, or anti-pattern note to your personal overlay.</p>
-          <p><strong>Say:</strong> &ldquo;Save this as a personal Prompt Compass record.&rdquo;</p>
-        </dd>
-        <dt><code>seed_personal_overlay</code></dt>
-        <dd>
-          <p>Guided onboarding to teach Prompt Compass your domains, models, and named methods.</p>
-          <p><strong>Say:</strong> &ldquo;Set up my personal Prompt Compass overlay.&rdquo;</p>
-        </dd>
-        <dt><code>manage_preferences</code></dt>
-        <dd>
-          <p>Reads, previews, or updates Auto Flow preferences (silent mode, clarification behavior, etc.).</p>
-          <p><strong>Say:</strong> &ldquo;Update my Prompt Compass Auto Flow preferences.&rdquo;</p>
-        </dd>
-        <dt><code>delete_personal_record</code></dt>
-        <dd>
-          <p>Removes a personal overlay record (core records are protected).</p>
-          <p><strong>Say:</strong> &ldquo;Delete my personal record named [name].&rdquo;</p>
-        </dd>
-        <dt><code>flag_core_record</code></dt>
-        <dd>
-          <p>Marks a built-in record for review without mutating the core knowledge base.</p>
-          <p><strong>Say:</strong> &ldquo;Flag this Prompt Compass record for review.&rdquo;</p>
-        </dd>
-        <dt><code>list_core_review_flags</code></dt>
-        <dd>
-          <p>Lists open, reviewed, or dismissed flags on core records.</p>
-          <p><strong>Say:</strong> &ldquo;Show my Prompt Compass review flags.&rdquo;</p>
-        </dd>
-        <dt><code>sync_personal_overlay_from_markdown</code></dt>
-        <dd>
-          <p>Syncs personal records from Obsidian/Markdown vault edits back into the runtime overlay.</p>
-          <p><strong>Say:</strong> &ldquo;Sync my personal overlay from Markdown.&rdquo;</p>
-        </dd>
-        <dt><code>search_prompt_library</code></dt>
-        <dd>
-          <p>Searches saved personal prompts, templates, and examples.</p>
-          <p><strong>Say:</strong> &ldquo;Search my saved prompts for [topic].&rdquo;</p>
-        </dd>
-        <dt><code>get_prompt_library_item</code></dt>
-        <dd>
-          <p>Retrieves one saved prompt asset by name or ID.</p>
-          <p><strong>Say:</strong> &ldquo;Get my saved prompt called [name].&rdquo;</p>
-        </dd>
-        <dt><code>save_prompt_library_item</code></dt>
-        <dd>
-          <p>Saves a useful prompt, template, or example to your personal library for later reuse.</p>
-          <p><strong>Say:</strong> &ldquo;Save this prompt to my library.&rdquo;</p>
-        </dd>
-        <dt><code>delete_prompt_library_item</code></dt>
-        <dd>
-          <p>Removes a saved item from the personal prompt library.</p>
-          <p><strong>Say:</strong> &ldquo;Delete my saved prompt called [name].&rdquo;</p>
-        </dd>
-      </dl>
+        <p>Prompt Compass includes tools for overview, onboarding, prompt diagnosis, prompt improvement, from-scratch prompt building, prompt comparison, preflight checks, model targeting, prompt-library search, and personal prompt-overlay storage.</p>
+        <p>The tool inventory lives here so people can understand the surface without turning the Get Started tab into a reference manual. Product-specific examples and release notes stay in their own tabs and GitHub release pages.</p>
       </div>
 
       <div class="card">
@@ -530,95 +314,8 @@ What I want the AI to help with:
       </div>
     </section>
 
-<section id="install" class="tab-panel" role="tabpanel" aria-labelledby="tab-install" hidden>
-      <section class="card notice">
-        <h2>Verified Claude Surfaces</h2>
-        <p>These install paths have been verified for Claude Desktop, Claude Cowork, and Claude Code. Local MCP/plugin and Desktop extension installs are not verified for Claude.ai in a web browser. The skill may work in other Claude surfaces, but this guide only documents the tested paths below.</p>
-      </section>
-
-      <details id="install-cowork" class="card">
-        <summary>Claude Cowork or Claude Code</summary>
-        <ol>
-          <li>Download <code>prompt-compass-plugin.zip</code>.</li>
-          <li>Open Claude Cowork or Claude Code.</li>
-          <li>Click <strong>Customize</strong> in the left sidebar.</li>
-          <li>Under <strong>Personal Plugins</strong>, click the <strong>+</strong> button.</li>
-          <li>Hover over <strong>Create Plugin</strong>, then click <strong>Upload Plugin</strong>.</li>
-          <li>Drag the zip file into the upload area.</li>
-          <li>Done. Prompt Compass is now active in your session.</li>
-        </ol>
-      </details>
-
-      <details id="install-desktop" class="card">
-        <summary>Claude Desktop</summary>
-        <ol>
-          <li>Download <code>prompt-compass-0.1.0.mcpb</code>.</li>
-          <li>Open the Claude Desktop app.</li>
-          <li>Go to <strong>Settings</strong> &rarr; <strong>Extensions</strong>.</li>
-          <li>Drag the downloaded file into the Extensions panel.</li>
-          <li>A security warning will appear. This is expected; see the FAQ tab for why.</li>
-          <li>Done.</li>
-        </ol>
-      </details>
-
-      <details id="install-skill" class="card">
-        <summary>Skill / Prompt-Only Alternative</summary>
-        <ol>
-          <li>Download <code>prompt-compass.skill</code> or <code>skill.zip</code>. Either works.</li>
-          <li>Open Claude or Claude Code.</li>
-          <li>Go to <strong>Skills</strong>, then click the <strong>+</strong> button.</li>
-          <li>Hover over <strong>Create Skill</strong>, then click <strong>Upload Skill</strong>.</li>
-          <li>Drag in your downloaded file.</li>
-          <li>Done. Use this on its own, or install it alongside the plugin or extension when you want the prompt-only version available too.</li>
-        </ol>
-      </details>
-
-      <section class="card notice">
-        <h2>If Install Fails</h2>
-        <p>Use the <a href="#diagnostics-prompt">diagnostic prompt</a> in the Advanced tab before editing any files manually.</p>
-      </section>
-    </section>
-
-<section id="example" class="tab-panel" role="tabpanel" aria-labelledby="tab-example" hidden>
-      <div class="card">
-        <h2>Prompt Compass in Action &mdash; Real Session Output</h2>
-        <p class="example-lead">The prompt that started it:</p>
-        <blockquote class="example-quote">&ldquo;like, um, going forward, we create a protocol to separate any of the personal overlay space from, like, my personal prompt compass MCP is stored in it...&rdquo;</blockquote>
-        <p>A voice memo. No structure. Misspelled tool names. Five deferred decisions tangled with three urgent ones. The kind of thing you dictate at 11pm when the idea is flowing but the words aren't cooperating.</p>
-        <p><strong>What Prompt Compass did:</strong> It didn't just clean up the grammar. It diagnosed the prompt first &mdash; spotted three active anti-patterns (hallucination-bait, scope sprawl, missing success test), named the pattern (Voice Memo / Dictation Intake), then asked three targeted questions before writing a single word of the improved version.</p>
-        <p>The third question is where it got interesting. Asked what the single most important behavior should be, the answer completely reversed the original intent &mdash; from &ldquo;write notes at session end&rdquo; to &ldquo;write immediately when a durable event occurs, because session end is a fiction for how I actually work.&rdquo; That pivot couldn't have been inferred. It required a human in the loop.</p>
-        <p>The output: a clean two-variant memory policy &mdash; one terse version for lean AI profiles, one full version for rich project instructions &mdash; with named tool calls, a floor/ceiling authority model, and a success test a developer could hand to a collaborator cold.</p>
-        <p><strong>RACCCA score lifted from 21 to 26. Three anti-patterns resolved. One policy that will govern how two AI systems handle memory for the foreseeable future.</strong></p>
-        <p>That's what Prompt Compass is for.</p>
-      </div>
-      <div class="card">
-        <h2>Before / After Teaching Artifact</h2>
-        <p>This curated artifact shows the transformation in a tighter teaching format: raw dictation on one side, Prompt Compass's improved prompt structure on the other, and the human-in-the-loop decisions that changed the final output.</p>
-        <div class="example-actions">
-          <a class="button" href="examples/prompt-compass-before-after-infographic.html" target="_blank" rel="noopener">Open interactive example</a>
-          <a class="button ghost" href="https://claude.ai/share/929cc039-cd45-4ae6-9039-51c398b4c515" target="_blank" rel="noopener">View full shared conversation</a>
-        </div>
-      </div>
-      <figure class="example-output">
-        <img class="example-output-image" src="examples/prompt-compass-before-after-snapshot.png" alt="Stitched before-and-after screenshot showing Prompt Compass turning a raw voice memo into an improved prompt" loading="lazy">
-        <figcaption class="example-caption">Curated before/after artifact, stitched from screenshots.</figcaption>
-      </figure>
-      <div class="card">
-        <h2>Real Claude Conversation Sample</h2>
-        <p>This snapshot is taken from the real shared Claude conversation. It shows Prompt Compass operating across the actual loop: rough prompt, anti-pattern diagnosis, advanced questions, improved prompt, and change rationale.</p>
-        <p>The full conversation is available for people who want to inspect more examples and iterations, but the preview below is the intended first look.</p>
-        <div class="example-actions">
-          <a class="button secondary" href="https://claude.ai/share/929cc039-cd45-4ae6-9039-51c398b4c515" target="_blank" rel="noopener">Open full shared conversation</a>
-        </div>
-      </div>
-      <figure class="example-output">
-        <img class="example-output-image" src="examples/prompt-compass-real-session-snapshot.png" alt="Stitched screenshot sample from a real Claude conversation using Prompt Compass advanced improve mode" loading="lazy">
-        <figcaption class="example-caption">Real conversation sample, stitched from screenshots.</figcaption>
-      </figure>
-    </section>
-
-<section id="faq" class="tab-panel" role="tabpanel" aria-labelledby="tab-faq" hidden>
-            <div class="section-heading">
+    <section id="faq" class="tab-panel" role="tabpanel" aria-labelledby="tab-faq" hidden>
+      <div class="section-heading">
         <h2>Frequently Asked Questions</h2>
         <p>Quick answers about what Prompt Compass does, how the files differ, and what to expect during install.</p>
       </div>
@@ -652,7 +349,99 @@ What I want the AI to help with:
       </div>
     </section>
 
-<section id="advanced" class="tab-panel" role="tabpanel" aria-labelledby="tab-advanced" hidden>
+    <section id="install" class="tab-panel" role="tabpanel" aria-labelledby="tab-install" hidden>
+      <div class="section-heading">
+        <h2>Install Guide</h2>
+        <p>Choose the install path for the Claude surface you use. Prompt Compass beta.3 install paths have been verified for Claude Desktop, Claude Cowork, and Claude Code; Claude.ai web-browser behavior is not claimed here.</p>
+      </div>
+
+      <section class="card notice">
+        <h2>Verified Claude Surfaces</h2>
+        <p>These install paths have been verified for Claude Desktop, Claude Cowork, and Claude Code. Local MCP/plugin and Desktop extension installs are not verified for Claude.ai in a web browser. The skill may work in other Claude surfaces, but this guide only documents the tested paths below.</p>
+      </section>
+
+      <section class="grid">
+        <div class="card" id="install-cowork">
+          <h2>Claude Cowork Plugin</h2>
+          <ol>
+            <li>Download <code>prompt-compass-plugin.zip</code>.</li>
+            <li>Open Claude Cowork or Claude Code.</li>
+            <li>Click <strong>Customize</strong> in the left sidebar.</li>
+            <li>Under <strong>Personal Plugins</strong>, click the <strong>+</strong> button.</li>
+            <li>Hover over <strong>Create Plugin</strong>, then click <strong>Upload Plugin</strong>.</li>
+            <li>Drag the zip file into the upload area.</li>
+            <li>Use <code>prompt_compass_overview</code> or one of the first prompts on the Get Started tab.</li>
+          </ol>
+        </div>
+        <div class="card" id="install-desktop">
+          <h2>Claude Desktop Extension</h2>
+          <ol>
+            <li>Download <code>prompt-compass-0.1.0.mcpb</code>.</li>
+            <li>Open the Claude Desktop app.</li>
+            <li>Go to <strong>Settings</strong> &rarr; <strong>Extensions</strong>.</li>
+            <li>Drag the downloaded file into the Extensions panel.</li>
+            <li>Approve the standard local-extension warning.</li>
+            <li>Ask Claude to use Prompt Compass for a prompt improvement or preflight.</li>
+          </ol>
+        </div>
+        <div class="card" id="install-skill">
+          <h2>Skill File or Skill Zip</h2>
+          <ol>
+            <li>Download <code>prompt-compass.skill</code> or <code>skill.zip</code>.</li>
+            <li>Open Claude or Claude Code.</li>
+            <li>Go to <strong>Skills</strong>, then click the <strong>+</strong> button.</li>
+            <li>Hover over <strong>Create Skill</strong>, then click <strong>Upload Skill</strong>.</li>
+            <li>Drag in your downloaded file.</li>
+            <li>Use this on its own, or install it alongside the plugin or extension when you want the prompt-only version available too.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="card notice">
+        <h2>If Install Fails</h2>
+        <p>Use the <a href="#diagnostics-prompt">diagnostic prompt</a> in the Advanced tab before editing any files manually.</p>
+      </section>
+    </section>
+
+    <section id="example" class="tab-panel" role="tabpanel" aria-labelledby="tab-example" hidden>
+      <div class="card">
+        <h2>Prompt Compass in Action &mdash; Real Session Output</h2>
+        <p class="example-lead">The prompt that started it:</p>
+        <blockquote class="example-quote">&ldquo;like, um, going forward, we create a protocol to separate any of the personal overlay space from, like, my personal prompt compass MCP is stored in it...&rdquo;</blockquote>
+        <p>A voice memo. No structure. Misspelled tool names. Five deferred decisions tangled with three urgent ones. The kind of thing you dictate at 11pm when the idea is flowing but the words aren't cooperating.</p>
+        <p><strong>What Prompt Compass did:</strong> It didn't just clean up the grammar. It diagnosed the prompt first &mdash; spotted three active anti-patterns (hallucination-bait, scope sprawl, missing success test), named the pattern (Voice Memo / Dictation Intake), then asked three targeted questions before writing a single word of the improved version.</p>
+        <p>The third question is where it got interesting. Asked what the single most important behavior should be, the answer completely reversed the original intent &mdash; from &ldquo;write notes at session end&rdquo; to &ldquo;write immediately when a durable event occurs, because session end is a fiction for how I actually work.&rdquo; That pivot couldn't have been inferred. It required a human in the loop.</p>
+        <p>The output: a clean two-variant memory policy &mdash; one terse version for lean AI profiles, one full version for rich project instructions &mdash; with named tool calls, a floor/ceiling authority model, and a success test a developer could hand to a collaborator cold.</p>
+        <p><strong>RACCCA score lifted from 21 to 26. Three anti-patterns resolved. One policy that will govern how two AI systems handle memory for the foreseeable future.</strong></p>
+        <p>That's what Prompt Compass is for.</p>
+      </div>
+      <div class="card">
+        <h2>Before / After Teaching Artifact</h2>
+        <p>This curated artifact shows the transformation in a tighter teaching format: raw dictation on one side, Prompt Compass's improved prompt structure on the other, and the human-in-the-loop decisions that changed the final output.</p>
+        <div class="example-actions">
+          <a class="button" href="examples/prompt-compass-before-after-infographic.html" target="_blank" rel="noopener">Open interactive example</a>
+          <a class="button ghost" href="https://claude.ai/share/929cc039-cd45-4ae6-9039-51c398b4c515" target="_blank" rel="noopener">View full shared conversation</a>
+        </div>
+      </div>
+      <figure class="example-output">
+        <img class="example-output-image" src="examples/prompt-compass-before-after-snapshot.png" alt="Stitched before-and-after screenshot showing Prompt Compass turning a raw voice memo into an improved prompt" loading="lazy">
+        <figcaption class="example-caption">Curated before/after artifact, stitched from screenshots 0-1 and 0-2.</figcaption>
+      </figure>
+      <div class="card">
+        <h2>Real Claude Conversation Sample</h2>
+        <p>This snapshot is taken from the real shared Claude conversation. It shows Prompt Compass operating across the actual loop: rough prompt, anti-pattern diagnosis, advanced questions, improved prompt, and change rationale.</p>
+        <p>The full conversation is available for people who want to inspect more examples and iterations, but the preview below is the intended first look.</p>
+        <div class="example-actions">
+          <a class="button secondary" href="https://claude.ai/share/929cc039-cd45-4ae6-9039-51c398b4c515" target="_blank" rel="noopener">Open full shared conversation</a>
+        </div>
+      </div>
+      <figure class="example-output">
+        <img class="example-output-image" src="examples/prompt-compass-real-session-snapshot.png" alt="Stitched screenshot sample from a real Claude conversation using Prompt Compass advanced improve mode" loading="lazy">
+        <figcaption class="example-caption">Real conversation sample, stitched from screenshots 1 through 9.</figcaption>
+      </figure>
+    </section>
+
+    <section id="advanced" class="tab-panel" role="tabpanel" aria-labelledby="tab-advanced" hidden>
       <div class="card">
         <h2>Advanced</h2>
         <p>This section is for IT reviewers, security-conscious users, and anyone troubleshooting installation.</p>
@@ -665,12 +454,12 @@ What I want the AI to help with:
         <details>
           <summary>Advanced: Verify Download</summary>
           <p>These SHA-256 checksums help technical reviewers confirm that downloaded files match this release.</p>
-          <table><tr><td><code>checksums.txt</code></td><td><code>088052062c8d1fb3183ea208bac3ba47d61dec76c230e1d013ad2e098342d137</code></td></tr>
-<tr><td><code>prompt-compass-0.1.0.mcpb</code></td><td><code>3ccc8061f2e3be82b21f7c08048d495e54b281e7cf0b89ded9628443b83fa613</code></td></tr>
-<tr><td><code>prompt-compass-plugin.zip</code></td><td><code>4620366c2010d652d90f88cf56a7369feac30f60c5443406659e4c143affca59</code></td></tr>
-<tr><td><code>prompt-compass-source.zip</code></td><td><code>45ed0b335e739dad4066303b843aa9deac49ec64f4157515ce969817bdb656b5</code></td></tr>
-<tr><td><code>prompt-compass.skill</code></td><td><code>77911d338373cc0d3637a3ff07b5fbb72ae81e12449a4b69c76d1c543ce30608</code></td></tr>
-<tr><td><code>skill.zip</code></td><td><code>460ef16327ede26813416b3ac412cf316584807731705401b047c80b44344645</code></td></tr></table>
+          <table><tr><td><a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.3/checksums.txt" download><code>checksums.txt</code></a></td><td><code>4d9e41cd43d6b3a54d9d035693c1b6edc3b4d8edd952d27876e4b6e83f670018</code></td></tr>
+<tr><td><a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.3/prompt-compass-0.1.0.mcpb" download><code>prompt-compass-0.1.0.mcpb</code></a></td><td><code>7d0f5531520014ae7367bb15e410c65337711e3b6428bbcd7e5fce8908b78789</code></td></tr>
+<tr><td><a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.3/prompt-compass-plugin.zip" download><code>prompt-compass-plugin.zip</code></a></td><td><code>17249f39763a28d9d00d02c5d06656566e1f0b9e76b8dea9ce627a7318f12e37</code></td></tr>
+<tr><td><a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.3/prompt-compass-source.zip" download><code>prompt-compass-source.zip</code></a></td><td><code>be60eda12489cf4fe472474a08deb891491c19e9c03f7851d0505e2d0d1e325b</code></td></tr>
+<tr><td><a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.3/prompt-compass.skill" download><code>prompt-compass.skill</code></a></td><td><code>77911d338373cc0d3637a3ff07b5fbb72ae81e12449a4b69c76d1c543ce30608</code></td></tr>
+<tr><td><a href="https://github.com/JonathanKHobson/prompt-compass/releases/download/v0.1.0-beta.3/skill.zip" download><code>skill.zip</code></a></td><td><code>460ef16327ede26813416b3ac412cf316584807731705401b047c80b44344645</code></td></tr></table>
         </details>
       </div>
       <div id="ai-install-prompt" class="card">
@@ -741,7 +530,7 @@ Known local-MCP troubleshooting rules:
 - For Codex, validate the config if a validator is available before restarting.
 - For Claude Code, confirm the user opened the workspace root that contains .mcp.json.
 - If files live on /Volumes or another external drive, avoid shell wrappers when possible and prefer a direct interpreter command.
-- If Python behaves strangely on macOS external drives, check for AppleDouble sidecars such as ._* or .__* and consider keeping the runtime in a stable home-directory path while pointing it at the project/data.
+- If Python behaves strangely on macOS external drives, check for AppleDouble sidecar files and consider keeping the runtime in a stable home-directory path while pointing it at the project/data.
 
 For plugin, MCPB/Desktop extension, or skill installs:
 - Do not hand-edit installed plugin, extension, or skill cache folders.
@@ -819,10 +608,6 @@ Expected result:
   </main>
   <footer>
     <p>Prompt Compass is local-first by default: no provider key is required for the bundled prompt-engineering workflows.</p>
-      <div class="footer-author">
-      <p><strong>Jonathan Kyle Hobson</strong> &mdash; UX researcher, product strategist, and AI tool builder.</p>
-      <p><a href="https://www.linkedin.com/in/jonathankylehobson/" target="_blank" rel="noopener">Connect on LinkedIn</a> &middot; <a href="#about">About this project</a></p>
-    </div>
   </footer>
   <script>
     const tabButtons = Array.from(document.querySelectorAll("[data-tab-target]"));

@@ -1,12 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Download Prompt Compass</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%23f8fbf9%27/%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2723%27 fill=%27none%27 stroke=%27%230f766e%27 stroke-width=%275%27/%3E%3Cpath d=%27M40 12 34 34 52 46 30 39z%27 fill=%27%23d95f43%27/%3E%3Cpath d=%27M24 52 30 30 12 18 34 25z%27 fill=%27%23527a39%27/%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%274%27 fill=%27%2317211f%27/%3E%3C/svg%3E">
+  <title>Prompt Compass — Working Tools</title>
+  <link rel="icon" href="assets/working-tools-mark.svg" type="image/svg+xml">
   <style>
-    /* compass-public-visual-system: uxhc-v1 */
+    /* working-tools-network-v2 */
     :root {
       color-scheme: light;
       --bg: #f7faf7;
@@ -209,29 +209,30 @@
 
     }
   </style>
+  <link rel="stylesheet" href="assets/network.css">
 </head>
 <body>
-  <header>
-    <div class="brand">
-      <img alt="Compass badge" src="data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 120 120&#x27;%3E%3Crect width=&#x27;120&#x27; height=&#x27;120&#x27; rx=&#x27;16&#x27; fill=&#x27;%23f8fbf9&#x27;/%3E%3Ccircle cx=&#x27;60&#x27; cy=&#x27;60&#x27; r=&#x27;44&#x27; fill=&#x27;none&#x27; stroke=&#x27;%230f766e&#x27; stroke-width=&#x27;8&#x27;/%3E%3Cpath d=&#x27;M76 18 64 63 98 80 56 69z&#x27; fill=&#x27;%23d95f43&#x27;/%3E%3Cpath d=&#x27;M44 102 56 57 22 40 64 51z&#x27; fill=&#x27;%23527a39&#x27;/%3E%3Ccircle cx=&#x27;60&#x27; cy=&#x27;60&#x27; r=&#x27;7&#x27; fill=&#x27;%2317211f&#x27;/%3E%3C/svg%3E">
+  <a class="skip-link" href="#get-started">Skip to downloads</a>
+  <nav class="site-nav" aria-label="Working Tools network"><div class="site-nav-inner"><a class="site-nav-brand" href="https://jonathankhobson.github.io/compass-suite/"><span>Working Tools</span></a><div class="site-nav-links"><a class="site-nav-link" href="https://jonathankhobson.github.io/compass-suite/">Library</a><a class="site-nav-link" href="https://jonathankhobson.github.io/critical-compass/">Critical Compass</a><a class="site-nav-link" aria-current="page" href="https://jonathankhobson.github.io/prompt-compass/">Prompt Compass</a><a class="site-nav-link" href="https://jonathankhobson.github.io/ux-heuristic-compass/">UX Heuristics</a><a class="site-nav-link" href="https://jonathankhobson.github.io/what-is-an-mcp/">MCP Basics</a></div></div></nav>
+  <header class="hero" aria-label="Prompt Compass">
+    <div class="hero-lockup">
       <div>
-        <span class="tag">Prompt Compass 0.1.0-beta.3</span>
-        <h1>Download Prompt Compass</h1>
+        <span class="hero-eyebrow">Prompt Compass · v0.1.0-beta.3</span>
+        <h1>Turn the rough ask into instructions that can hold up.</h1>
       </div>
     </div>
-    <p class="lead">Prompt Compass helps AI users turn rough ideas, messy drafts, and fragile instructions into clearer prompts with diagnosis, guided improvement, prompt building, preflight checks, model targeting, and local personal overlays.</p>
-    <div class="header-actions">
-      <a class="button ghost" href="https://jonathankhobson.github.io/compass-suite/">Back to Compass Suite</a>
-    </div>
+    <p class="hero-lead">Prompt Compass helps AI users turn rough ideas, messy drafts, and fragile instructions into clearer prompts with diagnosis, guided improvement, prompt building, preflight checks, model targeting, and local personal overlays.</p>
+    <div class="hero-actions"><a class="button" href="#get-started">Choose a download</a><a class="button ghost" href="https://jonathankhobson.github.io/compass-suite/">Working Tools library</a></div>
+    <aside class="work-specimen" aria-label="Prompt Compass prompt structure specimen"><div class="specimen-top"><span>Prompt pass / 03</span><span>Before run</span></div><p class="specimen-before">Make this report better.</p><h2>Give the model a job it can finish.</h2><ol class="specimen-list"><li><span>01</span><strong>Role: evidence editor</strong></li><li><span>02</span><strong>Context: board draft + sources</strong></li><li><span>03</span><strong>Output: keep, change, verify</strong></li><li><span>04</span><strong>Check: no invented facts</strong></li></ol><div class="specimen-foot"><span>Intent visible</span><span>Result testable</span></div></aside>
   </header>
   <main>
     <nav class="tab-nav" role="tablist" aria-label="Prompt Compass download sections">
-      <button id="tab-get-started" role="tab" aria-controls="get-started" aria-selected="true" data-tab-target="get-started">Get Started</button>
-      <button id="tab-about" role="tab" aria-controls="about" aria-selected="false" data-tab-target="about">About</button>
-      <button id="tab-install" role="tab" aria-controls="install" aria-selected="false" data-tab-target="install">Install Guide</button>
-      <button id="tab-example" role="tab" aria-controls="example" aria-selected="false" data-tab-target="example">Example</button>
-      <button id="tab-faq" role="tab" aria-controls="faq" aria-selected="false" data-tab-target="faq">FAQ</button>
-      <button id="tab-advanced" role="tab" aria-controls="advanced" aria-selected="false" data-tab-target="advanced">Advanced</button>
+      <button type="button" id="tab-get-started" role="tab" aria-controls="get-started" aria-selected="true" data-tab-target="get-started">Get Started</button>
+      <button type="button" id="tab-about" role="tab" aria-controls="about" aria-selected="false" data-tab-target="about">About</button>
+      <button type="button" id="tab-install" role="tab" aria-controls="install" aria-selected="false" data-tab-target="install">Install Guide</button>
+      <button type="button" id="tab-example" role="tab" aria-controls="example" aria-selected="false" data-tab-target="example">Example</button>
+      <button type="button" id="tab-faq" role="tab" aria-controls="faq" aria-selected="false" data-tab-target="faq">FAQ</button>
+      <button type="button" id="tab-advanced" role="tab" aria-controls="advanced" aria-selected="false" data-tab-target="advanced">Advanced</button>
     </nav>
 
     <section id="get-started" class="tab-panel" role="tabpanel" aria-labelledby="tab-get-started">
@@ -289,7 +290,7 @@
           <h2>Quick Prompt Fix</h2>
           <p><strong>When to use:</strong> Best when you have a draft and want a safer, cleaner version fast.</p>
           <button class="button secondary" type="button" id="copy-quick">Copy prompt</button>
-          <textarea id="prompt-copy-quick" readonly>Use Prompt Compass. I want a quick fix for this prompt:
+          <textarea id="prompt-copy-quick" aria-label="Prompt Compass quick fix prompt" readonly>Use Prompt Compass. I want a quick fix for this prompt:
 
 [Paste your prompt here]</textarea>
         </div>
@@ -298,7 +299,7 @@
           <h2>Guided Improve</h2>
           <p><strong>When to use:</strong> Best when the prompt matters and you want the AI to ask a few plain-language questions.</p>
           <button class="button secondary" type="button" id="copy-guided">Copy prompt</button>
-          <textarea id="prompt-copy-guided" readonly>Use Prompt Compass with guided improve mode. Ask me one question at a time using native question UI if available.
+          <textarea id="prompt-copy-guided" aria-label="Prompt Compass guided improvement prompt" readonly>Use Prompt Compass with guided improve mode. Ask me one question at a time using native question UI if available.
 
 Prompt to improve:
 [Paste your prompt here]</textarea>
@@ -308,7 +309,7 @@ Prompt to improve:
           <h2>Build From Scratch</h2>
           <p><strong>When to use:</strong> Best when you know the outcome but do not know how to ask the AI for it yet.</p>
           <button class="button secondary" type="button" id="copy-build">Copy prompt</button>
-          <textarea id="prompt-copy-build" readonly>Use Prompt Compass to build a prompt from scratch. Start by routing the request, then help me choose quick fix, guided, or deep dive.
+          <textarea id="prompt-copy-build" aria-label="Prompt Compass build-from-scratch prompt" readonly>Use Prompt Compass to build a prompt from scratch. Start by routing the request, then help me choose quick fix, guided, or deep dive.
 
 What I want the AI to help with:
 [Describe the task here]</textarea>
@@ -655,7 +656,7 @@ What I want the AI to help with:
         <h2>AI-Assisted Install Prompt</h2>
         <p>Use this with a coding assistant that can inspect downloads, check your computer setup, and edit local config files. The local MCP source install is the most reliable automated path; for plugin, extension, and skill files, the assistant should determine the current add/install method and guide any user steps it cannot safely complete.</p>
         <button class="button" type="button" id="copy-ai-install">Copy install prompt</button>
-        <textarea id="ai-install-text" readonly>You are a careful, technically conservative AI install assistant. Your job is to help me add or install Prompt Compass - optionally including the local MCP source, plugin, MCPB/Desktop extension, and/or skill - safely, without modifying unrelated configuration or introducing unexpected dependencies. Do not delete anything; only add.
+        <textarea id="ai-install-text" aria-label="Prompt Compass AI-assisted install prompt" readonly>You are a careful, technically conservative AI install assistant. Your job is to help me add or install Prompt Compass - optionally including the local MCP source, plugin, MCPB/Desktop extension, and/or skill - safely, without modifying unrelated configuration or introducing unexpected dependencies. Do not delete anything; only add.
 
 Prompt Compass is a prompt engineering assistant for diagnosing, improving, building, and preflighting AI prompts.
 
@@ -751,7 +752,7 @@ Constraints throughout:
         <h2>Diagnostics Prompt</h2>
         <p>If installation fails, copy this prompt into Claude, Claude Code, or Codex and attach the file you tried to install.</p>
         <button class="button" type="button" id="copy-diagnostics">Copy diagnostics prompt</button>
-        <textarea id="diagnostics-prompt" readonly># Prompt Compass MCPB Installer / Diagnostic Prompt
+        <textarea id="diagnostics-prompt" aria-label="Prompt Compass diagnostic prompt" readonly># Prompt Compass MCPB Installer / Diagnostic Prompt
 
 Paste this into Claude, Claude Code, Codex, or another capable coding assistant when you want help installing or diagnosing Prompt Compass.
 
@@ -803,13 +804,13 @@ Expected result:
   <footer class="suite-footer" role="contentinfo">
     <div class="suite-footer-card">
       <p class="suite-footer-note">Prompt Compass is local-first by default: no provider key is required for the bundled prompt-engineering workflows.</p>
-      <p class="suite-footer-heading">Compass Suite is created and maintained by Jonathan Kyle Hobson.</p>
-      <p class="suite-footer-purpose">Local-first AI tools for reasoning, prompt work, UX review, and evidence-bound workflows.</p>
-      <nav class="suite-footer-grid" aria-label="Compass network footer">
+      <p class="suite-footer-heading">Prompt Compass is part of Working Tools by J. Kyle Hobson.</p>
+      <p class="suite-footer-purpose">Public resources for writing, evidence, design, building, career work, teaching, and games with AI.</p>
+      <nav class="suite-footer-grid" aria-label="Working Tools network footer">
         <section class="suite-footer-group" aria-labelledby="footer-start-here">
           <h2 id="footer-start-here">Start Here</h2>
           <div class="suite-footer-links">
-            <a href="https://jonathankhobson.github.io/compass-suite/">Compass Suite Home</a>
+            <a href="https://jonathankhobson.github.io/compass-suite/">Working Tools Library</a>
             <a href="https://jonathankhobson.github.io/compass-suite/#install">Install Guide</a>
             <a href="https://jonathankhobson.github.io/what-is-an-mcp/">MCP Basics</a>
           </div>
@@ -831,7 +832,7 @@ Expected result:
           </div>
         </section>
       </nav>
-      <p class="suite-footer-legal">&copy; 2026 Jonathan Kyle Hobson. Code AGPL-3.0-only; docs, prompts, skills, and methodology CC BY-SA 4.0 unless otherwise noted. Compass names, logos, author photo, and official trade dress reserved.</p>
+      <p class="suite-footer-legal">&copy; 2026 Jonathan Kyle Hobson. Code AGPL-3.0-only; docs, prompts, skills, and methodology CC BY-SA 4.0 unless otherwise noted. Product names and official brand assets are reserved.</p>
     </div>
   </footer>
   <script>

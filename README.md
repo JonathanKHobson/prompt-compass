@@ -1,5 +1,15 @@
 # Prompt Compass
 
+## Historical repository
+
+This repository preserves the earlier public guide and downloads. Current methods
+and onboarding live in [Prompt Playbook Studio](https://github.com/JonathanKHobson/working-tools-plugins/tree/main/plugins/prompt-playbook-studio).
+Existing Pages URLs, release assets, checksums and examples remain available.
+
+The documentation below describes the preserved edition. Archival does not remove
+separately configured runtimes, change their data, or make the successor a bundled
+replacement for every historical backend.
+
 Prompt-building tools and installation guidance. Start with the [public guide](https://jonathankhobson.github.io/prompt-compass/) or the versioned Releases.
 
 This repository hosts the public Prompt Compass download page at
